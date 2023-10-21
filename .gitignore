@@ -13,3 +13,5 @@ media/*
 #Other
 .DS_Store
 .coverage
+
+db.sqlite3
