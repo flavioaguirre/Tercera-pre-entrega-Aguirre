@@ -1,5 +1,20 @@
-body{
+a{
+    text-decoration: none;
+    font-style: inherit;
+}
 
+
+html body ul {
+    list-style-type: none;
+}
+
+img,
+picture,
+video,
+iframe {
+    max-width: 100%;
+    width: 100%;
+    display: block;
 }
 
 .navbar{
@@ -16,7 +31,7 @@ body{
 .navbar-brand {
     font-family: 'Times New Roman', Times, serif;
     font-size: 5.5rem;
-    color: darkcyan;
+    color: #138af2;
 }
 
 .form-control{

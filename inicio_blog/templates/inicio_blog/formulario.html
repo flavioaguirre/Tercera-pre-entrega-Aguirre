@@ -1,0 +1,33 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block content %}
+    <main class="main-pages">
+        <section class="section-page">
+            <h1 class="main-titles__h1">Datos de contacto</h1>
+            <div class="container d-flex justify-content-center">
+                <div class="row row-form col-md-4">
+                    <form class="form" method="post">
+                        <div class="form-floating mb-3">
+                            <input type="name" class="form-control" id="floatingInput" placeholder="Nombre y Apellido"
+                                required>
+                            <label for="floatingInput">Nombre y apellido</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                                required>
+                            <label for="floatingInput">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="Password" class="form-control" id="floatingInput" placeholder="entre 8 y 16 caracteres"
+                                required>
+                            <label for="floatingInput">Password</label>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <button class="btn btn-primary btn-form" type="submit">Confirmar</button>
+                        </div>
+                    </form>
+                </div>
+        </section>
+    </main>
+{% endblock %}
