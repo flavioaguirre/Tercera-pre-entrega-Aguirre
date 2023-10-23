@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     
     # My apps
     'inicio_blog',
+    'registro_usuario',
+    'inicio_sesion',
 ]
 
 MIDDLEWARE = [

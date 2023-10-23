@@ -1,0 +1,63 @@
+a{
+    text-decoration: none;
+    font-style: inherit;
+}
+
+
+html body ul {
+    list-style-type: none;
+}
+
+img,
+picture,
+video,
+iframe {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+}
+
+.navbar{
+    position: fixed;
+    height: 25%;
+}
+
+.navbar-toggler-icon{
+    padding: .5rem;
+    height:3rem;
+    border: none;
+}
+
+.navbar-brand {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5.5rem;
+    color: #138af2;
+}
+
+.form-control{
+    width: 10rem;
+    padding: .5rem;
+}
+
+.contenedor-main{
+    margin-top: 6.5rem;
+    padding: 4%;
+    display: flex;
+}
+
+.contenedor-section{
+    padding: 2%;
+}
+
+article.contenedor-article{
+    padding: 2%;
+    height: 40%;
+}
+
+.card-img, .card-img-top{
+    height: 20%;
+}
+
+.container-aside{
+    margin-top: 5%;
+}
