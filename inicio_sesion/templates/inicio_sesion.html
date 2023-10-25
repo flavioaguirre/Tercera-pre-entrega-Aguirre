@@ -2,11 +2,12 @@
 
 {% block content %}
     <main style="margin-top: 15%">
-        <form action="" method="post">
+        <h1 class='text-center'>Inicio sesion</h1>
+        <form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <div class="d-flex justify-content-center">
-                <button class="btn btn-primary btn-form" type="submit">Confirmar</button>
+                <button class="btn btn-primary btn-form" type="submit">Ingresar</button>
             </div>
         </form>
     </main>

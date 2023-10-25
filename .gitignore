@@ -13,5 +13,5 @@ media/*
 #Other
 .DS_Store
 .coverage
-
+.vscode/
 db.sqlite3
