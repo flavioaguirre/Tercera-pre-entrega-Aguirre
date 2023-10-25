@@ -3,6 +3,7 @@
 {% block content %}
     <main style="margin-top: 15%">
         <h1 class='text-center'>Inicio sesion</h1>
+        {{ alerta }}
         <form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}

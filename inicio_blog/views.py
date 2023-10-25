@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .models import *
+from .models import Posteos
+
 
 def blog(request):
-    posteos = PosteosTarjeta.objects.all().values()
+    posteos = Posteos.objects.all().values()
     return render(request, 'inicio_blog/index.html', {'posteos': posteos})
 
+
 def posteo_completo(request, id):
-    posteos= PosteosTarjeta.objects.get(id=id)
+    posteos = Posteos.objects.get(id=id)
     return render(request, 'inicio_blog/posteo.html', {'posteos': posteos})
-
-
