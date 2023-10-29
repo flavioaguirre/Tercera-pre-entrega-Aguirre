@@ -4,10 +4,10 @@
 {% block content %}
     <main class="contanier contenedor-main d-f">
         <section class="row contenedor-section p-20 col-md-9">
-            {% for posteo in posteo %}
+            {% for posteo in lista_posteos %}
                 <article class="conteiner-article">
                     <div class="card mb-3" style="max-width: 90%;">
-                        <a href="{{ posteo.id}}">
+                        <a href="{{ posteo.id }}">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src={% static "assets/img/inicio_blog/img-tecno1.jfif" %} class="img-fluid rounded-start" alt="...">
@@ -35,3 +35,4 @@
         </aside>
     </main>
 {% endblock %}
+
