@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <section class="row contenedor-section p-20 col-md-12">
-    <div class="">
-      <h1 style="text-align:center">{{ posteos.titulo_posteo }}</h1>
-      <p>{{ posteos.redaccion_posteo }}</p>
-      <span>{{ posteos.fecha_posteo }}</span>
-      <a href="./"><p>Volver al inicio</p></a>
-    </div>
-  </section>
+  <main style="margin-top: 12%;">
+    <section class="row contenedor-section p-20 col-md-12">
+      <div class="">
+        <h1 style="text-align:center">{{ posteos.titulo_posteo }}</h1>
+        <p>{{ posteos.redaccion_posteo }}</p>
+        <span>{{ posteos.fecha_posteo }}</span>
+        <br>
+        <span>Autor del Post: {{ posteos.autor_posteo }}</span>
+        <a href="./"><p>Volver al inicio</p></a>
+      </div>
+    </section>
+  </main>
 {% endblock %}

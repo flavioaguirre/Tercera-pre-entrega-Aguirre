@@ -4,26 +4,30 @@
 {% block content %}
     <main class="contanier contenedor-main d-f">
         <section class="row contenedor-section p-20 col-md-9">
-            {% for posteo in lista_posteos %}
-                <article class="conteiner-article">
-                    <div class="card mb-3" style="max-width: 90%;">
-                        <a href="{{ posteo.id }}">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src={% static "assets/img/inicio_blog/img-tecno1.jfif" %} class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ posteo.titulo_posteo }}</h5>
-                                        <p class="card-text">{{ posteo.descripcion_posteo }}</p>
-                                        <p class="card-text"><small class="text-body-secondary">{{ posteo.fecha_posteo }}</small></p>
+            {% if lista_posteos %}
+                {% for posteo in lista_posteos %}
+                    <article class="conteiner-article">
+                        <div class="card mb-3" style="max-width: 90%;">
+                            <a href="{{ posteo.id }}">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src={% static "assets/img/inicio_blog/img-tecno1.jfif" %} class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ posteo.titulo_posteo }}</h5>
+                                            <p class="card-text">{{ posteo.descripcion_posteo }}</p>
+                                            <p class="card-text"><small class="text-body-secondary">{{ posteo.fecha_posteo }}</small></p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                </article>
-            {% endfor %}
+                            </a>
+                        </div>
+                    </article>
+                {% endfor %}
+                {% else %}
+                <h3>No se encontraron resultados para dicha búsqueda.</h3>
+            {% endif %}
         </section>
         <aside class="container container-aside">
             <ul class="row list-group">
