@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Posteos
 from .forms import CreacionPosteoForm
 
@@ -6,7 +6,8 @@ from .forms import CreacionPosteoForm
 def inicio_blog(request):
     busqueda_especifica = request.GET.get('titulo_posteo')
     if busqueda_especifica:
-        lista_posteos = Posteos.objects.filter(titulo_posteo__icontains=busqueda_especifica)
+        lista_posteos = Posteos.objects.filter(
+            titulo_posteo__icontains=busqueda_especifica)
     else:
         lista_posteos = Posteos.objects.all()
     return render(request, 'inicio_blog/index.html', {'lista_posteos': lista_posteos})
@@ -39,5 +40,12 @@ def posteo_creado(request):
 
 
 def posteo_completo(request, id):
-    posteos = Posteos.objects.get(id=id)
+    posteos = get_object_or_404(Posteos, pk=id)
     return render(request, 'inicio_blog/posteo.html', {'posteos': posteos})
+
+
+def mis_posteos(request):
+    lista_posteos = Posteos.objects.all()
+    posteos_del_usuario = Posteos.objects.filter(autor_posteo=request.user)
+    return render(request, 'inicio_blog/mis_posts.html', {'posteos_del_usuario': posteos_del_usuario,
+                  'lista_posteos': lista_posteos})

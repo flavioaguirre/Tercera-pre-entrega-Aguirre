@@ -14,3 +14,6 @@ class Posteos(models.Model):
 
     def __str__(self):
         return f'{self.titulo_posteo}  ----  Posteado por: {self.autor_posteo} '
+
+
+    

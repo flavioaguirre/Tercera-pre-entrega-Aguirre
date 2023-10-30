@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <main style="margin: 12% 0 5% 5%;" class="d-f justify-content-center">
+        <section class="row contenedor-section p-20 col-md-11">
+            <h1 class="text-center">Mis Posteos</h1>
+            {% if posteos_del_usuario %}
+                {% for posteo in posteos_del_usuario %}
+                    <article class="conteiner-article">
+                        <div class="card mb-3" style="max-width: 90%;">
+                            <a href="{{ posteo.id }}">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src={% static "assets/img/inicio_blog/img-tecno1.jfif" %} class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ posteo.titulo_posteo }}</h5>
+                                            <p class="card-text">{{ posteo.descripcion_posteo }}</p>
+                                            <p class="card-text"><small class="text-body-secondary">{{ posteo.fecha_posteo }}</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                {% endfor %}
+                {% else %}
+                <h3>Todavia no has realizado ningun Posteo.</h3>
+            {% endif %}
+    </main>
+{% endblock %}
