@@ -22,11 +22,12 @@ def creacion_posteo(request):
             titulo = datos_nuevo_posteo.get('titulo_posteo')
             descripcion = datos_nuevo_posteo.get('descripcion_posteo')
             redaccion = datos_nuevo_posteo.get('redaccion_posteo')
+            categoria = datos_nuevo_posteo.get('categoria_posteo')
             autor = request.user
 
             posteo_nuevo = Posteos(
                 titulo_posteo=titulo, descripcion_posteo=descripcion, redaccion_posteo=redaccion,
-                autor_posteo=autor)
+                categoria_posteo=categoria, autor_posteo=autor)
             posteo_nuevo.save()
         return redirect('posteo_creado')
     else:

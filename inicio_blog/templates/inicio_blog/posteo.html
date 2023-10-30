@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <main style="margin-top: 12%;">
+  <main style="margin-top: 14%;">
     <section class="row contenedor-section p-20 col-md-12">
       <div class="">
         <h1 style="text-align:center">{{ posteos.titulo_posteo }}</h1>
         <p>{{ posteos.redaccion_posteo }}</p>
-        <span>{{ posteos.fecha_posteo }}</span>
         <br>
-        <span>Autor del Post: {{ posteos.autor_posteo }}</span>
+        <br>
+        <p><span>Fecha de publicación del Post:  {{ posteos.fecha_posteo }}</span></p>
+        <p><span>Autor del Post:  {{ posteos.autor_posteo }}</span></p>
+        <p><span>Categoría del Post:  {{ posteos.categoria_posteo }}</span></p>
+        <br>
+        <br>
         <a href="./"><p>Volver al inicio</p></a>
       </div>
     </section>
