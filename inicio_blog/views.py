@@ -9,7 +9,7 @@ def inicio_blog(request):
         lista_posteos = Posteos.objects.filter(
             titulo_posteo__icontains=busqueda_especifica)
     else:
-        lista_posteos = Posteos.objects.all()
+        lista_posteos = Posteos.objects.all().order_by('-fecha_posteo')
     return render(request, 'inicio_blog/index.html', {'lista_posteos': lista_posteos})
 
 
@@ -47,6 +47,12 @@ def posteo_completo(request, id):
 
 def mis_posteos(request):
     lista_posteos = Posteos.objects.all()
-    posteos_del_usuario = Posteos.objects.filter(autor_posteo=request.user)
+    posteos_del_usuario = Posteos.objects.filter(autor_posteo=request.user).order_by('-fecha_posteo')
     return render(request, 'inicio_blog/mis_posts.html', {'posteos_del_usuario': posteos_del_usuario,
                   'lista_posteos': lista_posteos})
+
+# def categoria_posteos(request):
+#     categoria_seleccionada = request.GET.get('categoria_posteo')
+#     if categoria_seleccionada == 
+#     categoria_seleccionada = Posteos.objects.filter(categoria_posteo=).order_by('-fecha_posteo')
+#     return render(request, 'inicio_blog/categoria_posteo.html', {})

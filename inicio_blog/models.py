@@ -15,11 +15,11 @@ class Posteos(models.Model):
     CATEGORIAS = [
         ('Programacion', 'Programación'),
         ('Robotica', 'Robótica'),
-        ('Matematicas', 'Matemáticas'),
+        ('Inteligencia Artificial', 'Inteligencia Artificial'),
     ]
 
     categoria_posteo = models.CharField(
-        max_length=20,
+        max_length=25,
         choices=CATEGORIAS,
         default='Programacion',
     )
