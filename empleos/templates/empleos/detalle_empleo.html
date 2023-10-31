@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main style="margin-top: 14%;">
+    <section class="row contenedor-section p-20 col-md-12">
+      <div class="">
+        <h1 style="text-align:center">{{ empleo.titulo_empleo }}</h1>
+        <p>{{ empleo.redaccion_empleo }}</p>
+        <br>
+        <br>
+        <p><span>Fecha de publicación del Post:  {{ empleo.fecha_publicacion_empleo}}</span></p>
+        <p><span>Autor del Post:  {{ empleo.autor_empleo }}</span></p>
+        <br>
+        <br>
+        <a href={% url "inicio_blog" %}><p>Volver al inicio</p></a>
+      </div>
+    </section>
+  </main>
+{% endblock %}

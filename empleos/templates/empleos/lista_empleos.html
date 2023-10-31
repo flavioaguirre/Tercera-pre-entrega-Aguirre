@@ -3,22 +3,21 @@
 
 {% block content %}
 <main class="contanier contenedor-main d-f">
-    <section class="row contenedor-section p-20 col-md-9">
-        <h1>Bolsa de empleos</h1>
-            {% for posteo in lista_posteos %}
+    <section class="row contenedor-section p-20 col-md-12">
+        <h1 class="text-center" style="padding-bottom: 3%;">Bolsa de empleos</h1>
+            {% for empleo in lista_empleos %}
                 <article class="conteiner-article">
                     <div class="card mb-3" style="max-width: 90%;">
-                        <a href="{{ posteo.id }}">
+                        <a href="{{ empleo.id }}">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src={% static "assets/img/inicio_blog/portfolio-img.png" %} class="img-fluid rounded-start" alt="...">
+                                    <img src={% static "assets/img/empleos/portfolio-img.png" %} class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ posteo.titulo_posteo }}</h5>
-                                        <p class="card-text">{{ posteo.descripcion_posteo }}</p>
-                                        <p class="card-text"><small class="text-body-secondary">{{ posteo.fecha_posteo }}</small></p>
-                                        <p class="card-text"><small class="text-body-secondary">Categoria: {{ posteo.categoria_posteo }}</small></p>
+                                        <h5 class="card-title text-center">{{ empleo.titulo_empleo }}</h5>
+                                        <p class="card-text text-center">{{ empleo.descripcion_empleo }}</p>
+                                        <p class="card-text"><small class="text-body-secondary">{{ empleo.fecha_publicacion_empleo }}</small></p>
                                     </div>
                                 </div>
                             </div>

@@ -23,27 +23,30 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="../inicio_blog/">Inicio</a>
+                                <a class="nav-link active" aria-current="page" href={% url "inicio_blog" %}>Inicio</a>
                             </li>
                             {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link" href="../inicio_blog/creacion_post">Nuevo Post</a>
+                                <a class="nav-link" href={% url "creacion_posteo" %}>Nuevo Post</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../inicio_blog/mis_posts">Mis Posts</a>
+                                <a class="nav-link" href={% url "mis_posteos" %}>Mis Posts</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../empleos/lista_empleos/">Empleos</a>
+                                <a class="nav-link" href={% url "empleos" %}>Empleos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../cierre_sesion/">Cerrar sesión</a>
+                                <a class="nav-link" href={% url "pubicar_empleos" %}>Publicar empleo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href={% url "logout" %}>Cerrar sesión</a>
                             </li>
                             {% else %}
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="../registro_usuario/">Registrarse</a>
+                                <a class="nav-link" aria-current="page" href={% url "registro_usuario" %}>Registrarse</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../inicio_sesion/">Iniciar sesión</a>
+                                <a class="nav-link" href={% url "login" %}>Iniciar sesión</a>
                             </li>
                             {% endif %}
                         </ul>
