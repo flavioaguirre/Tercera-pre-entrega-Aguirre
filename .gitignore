@@ -9,6 +9,7 @@ venv/
 pygsheets.egg-info/
 .pytest_cache/
 media/*
+db.sqlite3
 
 #Other
 .DS_Store
@@ -17,4 +18,4 @@ media/*
 
 #Django
 local_settings.py
-db.sqlite3
+
