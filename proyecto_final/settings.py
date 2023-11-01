@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'inicio_sesion',
     'cierre_sesion',
     'empleos',
+    'foro',
 ]
 
 MIDDLEWARE = [

@@ -39,6 +39,12 @@
                                 <a class="nav-link" href={% url "pubicar_empleos" %}>Publicar empleo</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href={% url "foro_discusion" %}>foro</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href={% url "comentar_foro" %}>Nuevo Comentario</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href={% url "logout" %}>Cerrar sesión</a>
                             </li>
                             {% else %}

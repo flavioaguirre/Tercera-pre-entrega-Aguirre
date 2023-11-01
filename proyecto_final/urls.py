@@ -24,4 +24,5 @@ urlpatterns = [
     path('inicio_sesion/', include('inicio_sesion.urls')),
     path('cierre_sesion/', include('cierre_sesion.urls')),
     path('empleos/', include('empleos.urls')),
+    path('foro/', include('foro.urls')),
 ]
