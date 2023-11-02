@@ -3,6 +3,9 @@ a{
     font-style: inherit;
 }
 
+a:hover{
+    color: none;
+}
 
 html body ul {
     list-style-type: none;
@@ -17,20 +20,39 @@ iframe {
     display: block;
 }
 
+.header{
+    
+}
+
 .navbar{
     position: fixed;
-    height: 25%;
+    height: 20%;
+    background: #27282D;
+}
+
+.nav-link{
+    color: #138af2;
+    font-size: 1.1rem;
+}
+
+.navbar-toggler{
+    background: #138af2;
 }
 
 .navbar-toggler-icon{
     padding: .5rem;
     height:3rem;
-    border: none;
+}
+
+.offcanvas{
+    background: #27282D;
+    color: #138af2;
 }
 
 .navbar-brand {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 5.5rem;
+    font-size: 5rem;
+    margin-left: 10%;
     color: #138af2;
 }
 
@@ -59,5 +81,25 @@ article.contenedor-article{
 }
 
 .container-aside{
-    margin-top: 5%;
+    margin-top: 2%;
 }
+
+.header_offcanvas{
+    color: #138af2;
+}
+
+.bg-button-aside{
+    background: #27282D;
+    color: #138af2;
+}
+
+.bg-hr{
+    color: #138af2;
+}
+.bg-button-aside-h2{
+    border-radius: 50%;
+}
+.accordion-button::after{
+    color: #138af2;
+}
+

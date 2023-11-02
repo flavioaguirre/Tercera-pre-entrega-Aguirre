@@ -31,13 +31,28 @@
             {% endif %}
         </section>
         <aside class="container container-aside">
-            <ul class="row list-group">
-                <li class="list-group-item active col-md-10" aria-current="true">Todo</li>
-                <li class="list-group-item col-md-10"><a href="#" name="Programación">Programación</a></li>
-                <li class="list-group-item col-md-10"><a href="#" name="Robótica">Robótica</a></li>
-                <li class="list-group-item col-md-10"><a href="#" name="Matemáticas">Inteligencia Artificial</a></li>
-            </ul>
+            <div class="accordion accordion-flush bg-dark bg-button-aside-h2" id="accordionFlushExample">
+                <div class="accordion-item bg-dark">
+                  <h2 class="accordion-header bg-button-aside-h2">
+                    <button class="accordion-button collapsed bg-button-aside" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Categorías
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><ul class="p-0">
+                        <li class="list-group-item col-md-10"><a href="#" name="Programación">Programación ( )</a></li>
+                        <hr class="bg-hr">
+                        <li class="list-group-item col-md-10"><a href="#" name="Robótica">Robótica ( )</a></li>
+                        <hr class="bg-hr">
+                        <li class="list-group-item col-md-10"><a href="#" name="Matemáticas">Inteligencia Artificial ( )</a></li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
         </aside>
     </main>
 {% endblock %}
 
+<strong>
+    
+</strong>

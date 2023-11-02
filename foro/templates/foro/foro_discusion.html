@@ -8,13 +8,14 @@
           <div class="card mb-3" style="max-width: 90%;">
             <div class="col-md-8">
               <div class="card-body">
-                <p class="card-text">{{ comentario.comentario }}</p>
-                <p class="card-text">
-                  <small class="text-body-secondary">{{ comentario.fecha_comentario }}</small>
-                </p>
-                <p class="card-text">
-                  <small class="text-body-secondary">{{ comentario.usuario }}</small>
-                </p>
+                <figure class="figure_container mt-4">
+                  <blockquote class="blockquote">
+                    <p class="">{{ comentario.comentario }}</p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer mt-5">
+                    <cite title="Source Title">Usuario: {{ comentario.usuario }}, {{ comentario.fecha_comentario }}</cite>
+                  </figcaption>
+                </figure>
               </div>
             </div>
           </div>

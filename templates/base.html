@@ -10,13 +10,13 @@
 </head>
 <body>
     <header class="header">
-        <nav class="navbar sticky-top bg-body-tertiary fixed-top">
+        <nav class="navbar sticky-top fixed-top">
             <div class="container-fluid d-f justify-content-space-beetwen">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
+                    <div class="offcanvas-header header_offcanvas">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">TechBlog</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
@@ -25,6 +25,7 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href={% url "inicio_blog" %}>Inicio</a>
                             </li>
+                            <hr>
                             {% if user.is_authenticated %}
                             <li class="nav-item">
                                 <a class="nav-link" href={% url "creacion_posteo" %}>Nuevo Post</a>
@@ -32,6 +33,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href={% url "mis_posteos" %}>Mis Posts</a>
                             </li>
+                            <hr>
                             <li class="nav-item">
                                 <a class="nav-link" href={% url "empleos" %}>Empleos</a>
                             </li>
@@ -39,12 +41,14 @@
                                 <a class="nav-link" href={% url "pubicar_empleos" %}>Publicar empleo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href={% url "foro_discusion" %}>foro</a>
+                                <hr>
+                                <a class="nav-link" href={% url "foro_discusion" %}>Foro</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href={% url "comentar_foro" %}>Nuevo Comentario</a>
                             </li>
                             <li class="nav-item">
+                                <hr>
                                 <a class="nav-link" href={% url "logout" %}>Cerrar sesión</a>
                             </li>
                             {% else %}
@@ -58,7 +62,7 @@
                         </ul>
                     </div>
                 </div>
-                <h1 style="margin-left: 10%;"><a class="navbar-brand" href="#">TechBlog</a></h1>
+                <h1 class="h1_brand_navbar"><a class="navbar-brand brand_navbar" href="#">TechBlog</a></h1>
                 <form class="d-flex" role="search">
                     <input class="form-control me-1" type="search" placeholder="Buscar un Post" name="titulo_posteo" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">
@@ -72,7 +76,7 @@
     </header>
 
     {% block content %}
-
+                    
     {% endblock %}
 
 
