@@ -20,14 +20,18 @@ iframe {
     display: block;
 }
 
-.header{
+/* .header{
     
-}
+} */
 
 .navbar{
     position: fixed;
     height: 20%;
     background: #27282D;
+}
+
+.icono-nav{
+    margin: .1rem 1rem .1rem 1rem;
 }
 
 .nav-link{
@@ -52,7 +56,7 @@ iframe {
 .navbar-brand {
     font-family: 'Times New Roman', Times, serif;
     font-size: 5rem;
-    margin-left: 10%;
+    margin-left: 15%;
     color: #138af2;
 }
 
@@ -82,6 +86,10 @@ article.contenedor-article{
 
 .container-aside{
     margin-top: 2%;
+}
+
+.list-group{
+    margin-top: 7rem;
 }
 
 .header_offcanvas{
