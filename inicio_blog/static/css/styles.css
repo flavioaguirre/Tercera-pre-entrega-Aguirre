@@ -1,3 +1,7 @@
+body{
+    background: #cccc;    
+}
+
 a{
     text-decoration: none;
     font-style: inherit;
@@ -23,6 +27,23 @@ iframe {
 /* .header{
     
 } */
+
+.btn:hover {
+    background: #138af2;
+    color: #27282D;
+    border-color: #138af2;
+}
+
+btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    background-color: #138af2;
+    color: #27282D;
+}
+
+.btn-outline-success{
+    background: #138af2;
+    color: #27282D;
+    border-color: #27282D;
+}
 
 .navbar{
     position: fixed;
@@ -54,10 +75,14 @@ iframe {
 }
 
 .navbar-brand {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 5rem;
+    font-family: 'Bungee', sans-serif;
+    font-size: 4.5rem;
     margin-left: 15%;
     color: #138af2;
+}
+
+.h1_brand_navbar{
+    font-family: 'Orbitron', sans-serif;
 }
 
 .form-control{
