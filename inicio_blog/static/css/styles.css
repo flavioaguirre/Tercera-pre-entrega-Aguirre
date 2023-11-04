@@ -3,27 +3,29 @@
     /*-- colors-- */
     --primary: #138af2;
     --secondary: #27282D;
-    --alternative: #0c1440;
+    --alternative: #27282d4e;
     --bg-color-grey: #cccc;
   
     /* Spacings */
     --spacing-xxlarge: 12.5em;
     --spacing-xlarge: 10em; 
-    --spacing-large: 6em;
+    --spacing-large: 7em;
     --spacing-medium: 2.4em;
     --spacing-small: 2em;
     --spacing-xsmall: 1em;
-    --spacing-xxsmall: .7em;
+    --spacing-xxsmall: .3em;
   
     /* Font-Family */
     --font-principal: Roboto;
     --font-title: 'Playfair Display', serif;
   
     /* font-Sizes */
-    --text-large: 5.2rem;
-    --text-medium: 2.2rem;
-    --text-base: 1.6rem;
-    --text-small: 1.4rem;
+    --text-xlarge: 5.2rem;
+    --text-large: 3.2rem;
+    --text-medium: 2.5rem;
+    --text-base: 2rem;
+    --text-small: 1.5rem;
+    --text-xsmall: 1.3rem;
   }
 
 *::after,
@@ -37,7 +39,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 62.5%;
+    font-size: 75%;
 }
 
 body{
@@ -92,14 +94,25 @@ btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.b
     border-color: var(--secondary);
 }
 
+/* [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+
+} */
+
 .icono-nav{
-    margin: .1rem 1rem .4rem 1rem;
+    margin: .1rem 1.7rem .4rem 1rem;
+}
+
+
+.offcanvas-title{
+    font-size: var(--text-large);
+    font-family: var(--font-title);
 }
 
 .nav-link{
     color: var(--primary);
     font-size: var(--text-base);
     padding: var(--spacing-xxsmall);
+    margin-right: var(--spacing-xsmall);
 }
 
 .navbar-toggler{
@@ -107,11 +120,12 @@ btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.b
 }
 
 .navbar-toggler-icon{
-    padding: var(--spacing-xxsmall);
     height:var(--spacing-medium);
+    width: var(--spacing-small);
 }
 
 .offcanvas{
+    max-width: 100vh;
     background: var(--secondary);
     color: var(--primary);
 }
@@ -120,10 +134,15 @@ btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.b
     color: #138af2;
 }
 
+.offcanvas-body{
+    margin: var(--spacing-medium) var(--spacing-medium) 0 0;
+    padding: var(--spacing-xsmall);
+}
+
 /* ----- Titulo del nav */
 .navbar-brand {
     font-family: var(--font-title);
-    font-size: var(--text-large);
+    font-size: var(--text-xlarge);
     margin-left: 20%;
     color: var(--primary);
 }
@@ -137,7 +156,7 @@ btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.b
 
 /* -------------  main */
 .contenedor-main{
-    margin-top: var(--spacing-xlarge);
+    margin-top: var(--spacing-large);
     padding: 4%;
     display: flex;
 }
@@ -145,7 +164,7 @@ btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.b
 
 /* ------------ section */
 .contenedor-section{
-    padding: 2%;
+    padding: 1%;
 }
 /* ----- Fin section */
 
@@ -167,16 +186,23 @@ article.contenedor-article{
 
 /* aside */
 .container-aside{
-    margin-top: 2%;
+    margin-top: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xsmall);
+    gap: var(--spacing-xxsmall);
+}
+
+.container-aside_h2{
+    font-family: var(--font-title);
+    color: var(--secondary);
+    font-size: var(--text-base);
 }
 
 .bg-button-aside{
     background: var(--secondary);
     color: var(--primary);
-    margin-top: var(--spacing-large);
+    margin-top: var(--spacing-medium);
+    font-size: var(--text-xsmall);
 }
 
 .bg-hr{
@@ -189,3 +215,32 @@ article.contenedor-article{
     color: var(--primary);
 }
 
+
+/* footer */
+.container-footer{
+    padding: var(--spacing-small);
+    margin-left:25%;
+    border-top: 1px solid var(--alternative);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-small);
+}
+
+.container-footer-iconos{
+    display: flex;
+    gap: var(--spacing-large);
+}
+
+.container-footer-iconos-icono{
+    width: var(--spacing-medium);
+
+}
+
+.mi_firma_footer{
+    display: flex;
+    font-size: var(--text-medium);
+    font-family: var(--font-title);
+    color: var(--secondary);
+}
