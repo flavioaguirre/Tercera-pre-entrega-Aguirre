@@ -1,5 +1,50 @@
+/* --------------------  Normalize CSS */
+:root {
+    /*-- colors-- */
+    --primary: #138af2;
+    --secondary: #27282D;
+    --alternative: #0c1440;
+    --bg-color-grey: #cccc;
+  
+    /* Spacings */
+    --spacing-xxlarge: 12.5em;
+    --spacing-xlarge: 10em; 
+    --spacing-large: 6em;
+    --spacing-medium: 2.4em;
+    --spacing-small: 2em;
+    --spacing-xsmall: 1em;
+    --spacing-xxsmall: .7em;
+  
+    /* Font-Family */
+    --font-principal: Roboto;
+    --font-title: 'Playfair Display', serif;
+  
+    /* font-Sizes */
+    --text-large: 5.2rem;
+    --text-medium: 2.2rem;
+    --text-base: 1.6rem;
+    --text-small: 1.4rem;
+  }
+
+*::after,
+*::before,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
 body{
-    background: #cccc;    
+    min-height: 100vh;
+    background: #cccc;
+    font-size: 100%;
+    line-height: 1.4em;
 }
 
 a{
@@ -11,10 +56,6 @@ a:hover{
     color: none;
 }
 
-html body ul {
-    list-style-type: none;
-}
-
 img,
 picture,
 video,
@@ -23,83 +64,92 @@ iframe {
     width: 100%;
     display: block;
 }
+/* --------------------- Fin Normalize */
 
-/* .header{
-    
-} */
 
-.btn:hover {
-    background: #138af2;
-    color: #27282D;
-    border-color: #138af2;
-}
-
-btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
-    background-color: #138af2;
-    color: #27282D;
-}
-
-.btn-outline-success{
-    background: #138af2;
-    color: #27282D;
-    border-color: #27282D;
-}
-
+/*       --------------- header */
+/* ------ nav */
 .navbar{
     position: fixed;
     height: 20%;
-    background: #27282D;
+    background: var(--secondary);
+}
+
+.btn:hover {
+    background: var(--primary);
+    color: var(--secondary);
+    border-color: var(--primary);
+}
+
+btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+.btn-outline-success{
+    background: var(--primary);
+    color: var(--secondary);
+    border-color: var(--secondary);
 }
 
 .icono-nav{
-    margin: .1rem 1rem .1rem 1rem;
+    margin: .1rem 1rem .4rem 1rem;
 }
 
 .nav-link{
-    color: #138af2;
-    font-size: 1.1rem;
+    color: var(--primary);
+    font-size: var(--text-base);
+    padding: var(--spacing-xxsmall);
 }
 
 .navbar-toggler{
-    background: #138af2;
+    background: var(--primary);
 }
 
 .navbar-toggler-icon{
-    padding: .5rem;
-    height:3rem;
+    padding: var(--spacing-xxsmall);
+    height:var(--spacing-medium);
 }
 
 .offcanvas{
-    background: #27282D;
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+.header_offcanvas{
     color: #138af2;
 }
 
+/* ----- Titulo del nav */
 .navbar-brand {
-    font-family: 'Bungee', sans-serif;
-    font-size: 4.5rem;
-    margin-left: 15%;
-    color: #138af2;
+    font-family: var(--font-title);
+    font-size: var(--text-large);
+    margin-left: 20%;
+    color: var(--primary);
 }
 
-.h1_brand_navbar{
-    font-family: 'Orbitron', sans-serif;
-}
-
+/* form para busqueda por titulo */
 .form-control{
-    width: 10rem;
-    padding: .5rem;
+    width: var(--spacing-xxlarge);
+    padding: var(--spacing-xxsmall);
 }
+/* ----------- Fin header */
 
+/* -------------  main */
 .contenedor-main{
-    margin-top: 6.5rem;
+    margin-top: var(--spacing-xlarge);
     padding: 4%;
     display: flex;
 }
+/* -------------- Fin main */
 
+/* ------------ section */
 .contenedor-section{
     padding: 2%;
 }
+/* ----- Fin section */
 
+/* article */
 article.contenedor-article{
     padding: 2%;
     height: 40%;
@@ -109,30 +159,33 @@ article.contenedor-article{
     height: 20%;
 }
 
-.container-aside{
-    margin-top: 2%;
-}
-
 .list-group{
     margin-top: 7rem;
 }
 
-.header_offcanvas{
-    color: #138af2;
+
+
+/* aside */
+.container-aside{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xsmall);
 }
 
 .bg-button-aside{
-    background: #27282D;
-    color: #138af2;
+    background: var(--secondary);
+    color: var(--primary);
+    margin-top: var(--spacing-large);
 }
 
 .bg-hr{
-    color: #138af2;
+    color: var(--primary);
 }
 .bg-button-aside-h2{
     border-radius: 50%;
 }
 .accordion-button::after{
-    color: #138af2;
+    color: var(--primary);
 }
 
