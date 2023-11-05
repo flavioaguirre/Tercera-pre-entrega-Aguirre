@@ -3,7 +3,7 @@
     /*-- colors-- */
     --primary: #138af2;
     --secondary: #27282D;
-    --alternative: #27282d4e;
+    --alternative: #27282d72;
     --bg-color-grey: #cccc;
   
     /* Spacings */
@@ -24,7 +24,7 @@
     --text-large: 3.2rem;
     --text-medium: 2.5rem;
     --text-base: 2rem;
-    --text-small: 1.5rem;
+    --text-small: 1.7rem;
     --text-xsmall: 1.3rem;
   }
 
@@ -110,9 +110,13 @@ btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.b
 
 .nav-link{
     color: var(--primary);
-    font-size: var(--text-base);
-    padding: var(--spacing-xxsmall);
+    font-size: var(--text-small);
+    padding: .6rem;
     margin-right: var(--spacing-xsmall);
+}
+
+.hr_navbar-nav{
+    padding: var(--spacing-xxsmall);
 }
 
 .navbar-toggler{
@@ -135,7 +139,7 @@ btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.b
 }
 
 .offcanvas-body{
-    margin: var(--spacing-medium) var(--spacing-medium) 0 0;
+    margin: var(--spacing-xsmall) var(--spacing-medium) 0 0;
     padding: var(--spacing-xsmall);
 }
 
@@ -144,6 +148,10 @@ btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.b
     font-family: var(--font-title);
     font-size: var(--text-xlarge);
     margin-left: 20%;
+    color: var(--primary);
+}
+
+.navbar-brand:hover{
     color: var(--primary);
 }
 
@@ -199,18 +207,19 @@ article.contenedor-article{
 }
 
 .bg-button-aside{
-    background: var(--secondary);
-    color: var(--primary);
+    background: var(--alternative);
+    color: var(--secondary);
     margin-top: var(--spacing-medium);
     font-size: var(--text-xsmall);
+    font-weight: 600;
+    font-family: var(--font-principal);
+    padding: 5%;
 }
 
 .bg-hr{
     color: var(--primary);
 }
-.bg-button-aside-h2{
-    border-radius: 50%;
-}
+
 .accordion-button::after{
     color: var(--primary);
 }
