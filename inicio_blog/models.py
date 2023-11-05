@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Posteos(models.Model):
     titulo_posteo = models.CharField(max_length=100)
-    descripcion_posteo = models.CharField(max_length=120)
+    descripcion_posteo = models.CharField(max_length=150)
     # imagen_posteo = models.ImageField(
     #     upload_to='./static/assets/img/inicio_blog/')
     redaccion_posteo = models.TextField()

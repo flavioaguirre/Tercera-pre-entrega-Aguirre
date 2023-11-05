@@ -12,7 +12,7 @@
     --spacing-large: 7em;
     --spacing-medium: 2.4em;
     --spacing-small: 2em;
-    --spacing-xsmall: 1em;
+    --spacing-xsmall: 1.2em;
     --spacing-xxsmall: .3em;
   
     /* Font-Family */
@@ -165,7 +165,7 @@ btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.b
 /* -------------  main */
 .contenedor-main{
     margin-top: var(--spacing-large);
-    padding: 4%;
+    padding: 4% 6%;
     display: flex;
 }
 /* -------------- Fin main */
@@ -227,6 +227,7 @@ article.contenedor-article{
 
 /* footer */
 .container-footer{
+    height: 20vh;
     padding: var(--spacing-small);
     margin-left:25%;
     border-top: 1px solid var(--alternative);
@@ -269,7 +270,7 @@ article.contenedor-article{
     display: flex;
     justify-content: flex-end;
     gap: var(--spacing-xxsmall);
-    margin: 7% 4% 0 0;
+    margin: 6% 4% 0 0;
     font-size: var(--text-base);
 }
 
@@ -277,6 +278,21 @@ article.contenedor-article{
     font-size: var(--text-xsmall);
 }
 
-.btn_grupo-botones-card:hover{
-    background: none;
+/* .btn_grupo-botones-card:hover{
+    background: ;
+} */
+
+/* ------ section Posteo completo */
+.container-posteo{
+    color: #000;
+    padding: var(--spacing-medium) 8%;
+    background: #e1e1dd;
+    font-size: var(--text-base);
+    font-family: cursive;
+    line-height: var(--spacing-xsmall);
+}
+
+.hr_posteo_completo{
+    margin-top: var(--spacing-medium);
+    padding: var(--spacing-xxsmall);
 }
