@@ -253,3 +253,30 @@ article.contenedor-article{
     font-family: var(--font-title);
     color: var(--secondary);
 }
+
+/* Mia Posteos */
+.conteiner-article_mis_posteos{
+    margin-left: var(--spacing-small);
+}
+
+
+.h1_conenedor_section_mis_posteos{
+    margin-bottom: var(--spacing-xsmall);
+}
+
+
+.grupo-botones-card{
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-xxsmall);
+    margin: 7% 4% 0 0;
+    font-size: var(--text-base);
+}
+
+.btn_grupo-botones-card{
+    font-size: var(--text-xsmall);
+}
+
+.btn_grupo-botones-card:hover{
+    background: none;
+}
