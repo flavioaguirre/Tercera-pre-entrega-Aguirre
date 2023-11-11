@@ -227,6 +227,7 @@ article.contenedor-article{
 
 /* footer */
 .container-footer{
+    position: relative;
     height: 20vh;
     padding: var(--spacing-small);
     margin-left:25%;
@@ -245,7 +246,6 @@ article.contenedor-article{
 
 .container-footer-iconos-icono{
     width: var(--spacing-medium);
-
 }
 
 .mi_firma_footer{
@@ -255,17 +255,20 @@ article.contenedor-article{
     color: var(--secondary);
 }
 
-/* Mia Posteos */
+/* Mis Posteos */
+/* lista con o sin elementos */
+.contenedor-section-mis-posteos{
+    height: 50vh;
+}
+
 .conteiner-article_mis_posteos{
     margin-left: var(--spacing-small);
 }
 
-
 .h1_conenedor_section_mis_posteos{
     margin-bottom: var(--spacing-xsmall);
 }
-
-
+/* la lista cuando contiene elementos elementos */
 .grupo-botones-card{
     display: flex;
     justify-content: flex-end;

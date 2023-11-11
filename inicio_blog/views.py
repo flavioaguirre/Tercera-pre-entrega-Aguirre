@@ -50,3 +50,7 @@ def mis_posteos(request):
     posteos_del_usuario = Posteos.objects.filter(autor_posteo=request.user).order_by('-fecha_posteo')
     return render(request, 'inicio_blog/mis_posts.html', {'posteos_del_usuario': posteos_del_usuario,
                   'lista_posteos': lista_posteos})
+
+
+def eliminar_post(request, posteo):
+    post_a_eliminar = Posteos.objects.get(id=posteo)

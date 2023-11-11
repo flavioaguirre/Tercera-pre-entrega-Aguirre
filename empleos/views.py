@@ -7,7 +7,6 @@ def lista_empleos(request):
     lista_empleos = Empleos.objects.all().order_by('-fecha_publicacion_empleo')
     return render(request, 'empleos/lista_empleos.html', {'lista_empleos': lista_empleos})
 
-
 def publicar_empleo(request):
     if request.method == 'POST':
         empleo_form = EmpleoForm(request.POST)
