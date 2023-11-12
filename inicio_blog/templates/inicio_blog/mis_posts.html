@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
+{% block title %}
+  <title>Mis posteos</title>
+{% endblock title %}
+
+{% block main %}
     <main class="d-f contenedor-main justify-content-center">
         <section class="row contenedor-section contenedor-section-mis-posteos  p-20 col-md-11">
             <h1 class="h1_conenedor_section_mis_posteos text-center">Mis Posteos</h1>
@@ -37,4 +41,4 @@
                   </svg> Redactar Posteo </a></p>
             {% endif %}
     </main>
-{% endblock %}
+{% endblock main %}

@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block title %}
+  <title>{{ posteos.titulo_posteo }}</title>
+{% endblock title %}
+
+{% block main %}
   <main class="contenedor-main">
     <section class="row contenedor-section p-20 col-md-12">
       <div class="container-posteo">
@@ -18,4 +22,4 @@
       </div>
     </section>
   </main>
-{% endblock %}
+{% endblock main %}

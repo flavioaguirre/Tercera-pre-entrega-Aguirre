@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
+{% block title %}
+  <title>Inicio | TechBlog</title>
+{% endblock title %}
+
+{% block main %}
     <main class="contanier contenedor-main d-f">
         <section class="row contenedor-section p-20 col-md-9">
             {% if lista_posteos %}
@@ -101,8 +105,4 @@
           </div>
         </aside>
     </main>
-{% endblock %}
-
-<strong>
-    
-</strong>
+{% endblock main %}

@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block title %}
+  <title>Foro | TechBlog</title>
+{% endblock title %}
+
+{% block main %}
   <main class="contanier contenedor-main d-f">
     <section class="row contenedor-section p-20 col-md-9">
       {% for comentario in foro %}
@@ -31,4 +35,4 @@
         </ul>
     </aside>
   </main>
-{% endblock %}
+{% endblock main %}

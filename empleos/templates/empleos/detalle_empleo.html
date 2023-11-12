@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
-{% block content %}
-  <main style="margin-top: 14%;">
+{% block title %}
+  <title>{{ empleo.titulo_empleo }} | Empleos</title>
+{% endblock title %}
+
+{% block main %}
+  <main class="contenedor-main d-f justify-content-center">
     <section class="row contenedor-section p-20 col-md-12">
       <div class="">
         <h1 style="text-align:center">{{ empleo.titulo_empleo }}</h1>
@@ -16,4 +20,4 @@
       </div>
     </section>
   </main>
-{% endblock %}
+{% endblock main %}
