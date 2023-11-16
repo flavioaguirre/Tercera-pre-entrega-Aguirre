@@ -25,4 +25,5 @@ urlpatterns = [
     path('cierre_sesion/', include('cierre_sesion.urls')),
     path('empleos/', include('empleos.urls')),
     path('foro/', include('foro.urls')),
+    path('mi_perfil/', include('mi_perfil.urls')),
 ]

@@ -24,7 +24,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     {% if user.is_authenticated %}
-                        <p style='margin-left: 2rem;'>Accediste como:   {{ request.user.username }} </p>
+                        <p style='margin-left: 2rem;'>Accediste como: {{ request.user.username }} </p>
                     {% endif %}
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">

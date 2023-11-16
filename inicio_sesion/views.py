@@ -14,6 +14,6 @@ def inicio_sesion(request):
             return redirect('inicio_blog')
         return render(request, 'inicio_sesion.html', {
             'form': AuthenticationForm,
-            'alerta': 'Usuario o contraseña incorrectas',
+            'alerta': 'Usuario o contraseña incorrectas. Verificá la información ingresada.',
             })
     return render(request, 'inicio_sesion.html', {'form': AuthenticationForm,})

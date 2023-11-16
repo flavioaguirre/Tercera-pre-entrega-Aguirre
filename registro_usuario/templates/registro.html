@@ -5,17 +5,16 @@
 {% endblock title %}
 
 {% block main %}
-    <main style="margin-top: 15%">
+    <main style="margin-top: 12%">
         <h1 class='text-center'>Registro Usuario</h1>
-        {{ alerta }}
-        <form method="POST" style="max-height:100vh">
-            
+        <form method="POST" style="max-height:100vh; padding: 3rem;">     
             {% csrf_token %}
-            
-            {{ mi_formulario.as_p }}
-
-            <div class="d-flex justify-content-center">
-                <button class="btn btn-primary btn-form" type="submit">Confirmar</button>
+            {{ alerta }}
+            <table class="d-flex justify-content-center">
+                {{ mi_formulario }}
+            </table>
+            <div class="d-flex justify-content-center p-5">
+                <button class="btn btn-primary btn-form" type="submit">Registrarse</button>
             </div>
         </form>
     </main>
