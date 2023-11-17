@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+  <title>Editar Perfil</title>
+{% endblock title %}
+
+{% block main %}
+    <main style="margin-top: 12%">
+        <h1 class='text-center'>Editar Perfil</h1>
+        <form method="POST" style="max-height:100vh; padding: 3rem;">     
+            {% csrf_token %}
+            {{ alerta }}
+            <table class="d-flex justify-content-center">
+                {{ mi_formulario }}
+            </table>
+            <div class="d-flex justify-content-center p-5">
+                <button class="btn btn-primary btn-form" type="submit">Confirmar cambios</button>
+            </div>
+        </form>
+    </main>
+
+{% endblock main %}

@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('', include('inicio_blog.urls')),
@@ -26,4 +28,4 @@ urlpatterns = [
     path('empleos/', include('empleos.urls')),
     path('foro/', include('foro.urls')),
     path('mi_perfil/', include('mi_perfil.urls')),
-]
+] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
