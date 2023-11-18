@@ -23,8 +23,8 @@
                                             <h5 class="card-title">{{ posteo.titulo_posteo }}</h5>
                                             <p class="card-text">{{ posteo.descripcion_posteo }}</p>
                                             <p class="card-text"><small class="text-body-secondary">{{ posteo.fecha_posteo }}</small></p>
-                                            <a href={% url "actualizar_posteo" posteo.id%}><input class="p-2" style="background-color: green; color: aliceblue;" type="button" value="Actualizar Post"></a>
-                                            <a href={% url "eliminar_posteo" posteo.id%}><input class="p-2" style="background-color: red; color: aliceblue;" type="button" value="Eliminar Post"></a>
+                                            <a href={% url "actualizar_posteo" posteo.id %}><input class="p-2" style="background-color: green; color: aliceblue;" type="button" value="Actualizar Post"></a>
+                                            <a href={% url "eliminar_posteo" posteo.id %}><input class="p-2" style="background-color: red; color: aliceblue;" type="button" value="Eliminar Post"></a>
                                         </div>
                                     </div>
                                 </div>

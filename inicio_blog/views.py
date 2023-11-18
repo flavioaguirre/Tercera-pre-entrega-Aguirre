@@ -1,14 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic.list import ListView
 from .models import Posteos
-from .forms import CreacionPosteoForm
-from .forms import ActualizarPosteoForm
+from .forms import CreacionPosteoForm, ActualizarPosteoForm
 
-
-# class Buscadorblog(ListView):
-#     model= Posteos
-#     context_object_name = 'lista_posteos'
-#     template_name = 'inicio_blog/index.html'
 
 def inicio_blog(request):
     busqueda_especifica = request.GET.get('titulo_posteo')

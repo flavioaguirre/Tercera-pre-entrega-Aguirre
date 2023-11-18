@@ -1,6 +1,14 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from django.views.generic.list import ListView
+from django.views.generic.edit import DeleteView
 from .models import Foro
 from .forms import ForoForm
+
+class ListadoComentarios(ListView):
+    model = Foro
+    context_object_name = 'foro'
+    template_name = "foro/foro_discusion.html"
 
 
 def comentar_foro(request):
@@ -19,6 +27,8 @@ def comentar_foro(request):
         return render(request, 'foro/publicar_comentario.html', {
             'foro_form': ForoForm,})
 
-def foro(request):
-    todos_los_comentarios = Foro.objects.all().order_by('-fecha_comentario')
-    return render(request, 'foro/foro_discusion.html', {'foro': todos_los_comentarios})
+
+class EliminarComentario(DeleteView):
+    model = Foro
+    template_name = "eliminar_comentario.html"
+    success_url = reverse_lazy('eliminar_comentario')
