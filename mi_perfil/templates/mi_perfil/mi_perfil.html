@@ -6,17 +6,19 @@
 
 {% block main %}
     <main style="margin-top: 12%">
-        <h1 class='text-center'>Mi Perfil</h1>
-        <form method="POST" style="max-height:100vh; padding: 3rem;">
-            <h3 class="d-f justify-content-center">{{ request.user.username }}</h3>
-            {% csrf_token %}
-            <table class="d-flex justify-content-center">
-                {{ mi_formulario }}
-            </table>
-            <div class="d-flex justify-content-center p-5">
-                <a href={% url "editar_perfil" %}><button class="btn btn-primary btn-form" type="button">Editar Perfil</button>
-            </div>
-        </form>
+        <div style="margin: 12% 0 0 5rem">
+            <h1 class='text-center'>Mi Perfil</h1>
+            <form method="POST" style="max-height:100vh; padding: 3rem;">
+                <h3 class="p-3">{{ request.user.username }}</h3>
+                {% csrf_token %}
+                <table >
+                    {{ mi_formulario }}
+                </table>
+                <div class="d-flex flex-start p-5">
+                    <a href={% url "editar_perfil" %}><button class="btn btn-primary btn-form" type="button">Editar Perfil</button>
+                </div>
+            </form>
+        </div>
     </main>
 
 {% endblock main %}

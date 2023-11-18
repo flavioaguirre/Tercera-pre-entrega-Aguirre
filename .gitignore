@@ -1,5 +1,4 @@
 #Python
-*.pyc
 __pycache__/
 build/
 dist/
@@ -8,8 +7,6 @@ venv/
 .pytest_cache/
 pygsheets.egg-info/
 .pytest_cache/
-media/*
-db.sqlite3
 
 #Other
 .DS_Store
@@ -17,5 +14,12 @@ db.sqlite3
 .vscode/
 
 #Django
+*.log
+*.pot
+*.pyc
 local_settings.py
+media/*
+db.sqlite3
+db.sqlite3-journal
+media
 

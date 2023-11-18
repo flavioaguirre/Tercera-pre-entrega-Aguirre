@@ -66,6 +66,28 @@ iframe {
     width: 100%;
     display: block;
 }
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  display: block;
+  color: inherit;
+}
+
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 /* --------------------- Fin Normalize */
 
 
@@ -227,7 +249,7 @@ article.contenedor-article{
 
 /* footer */
 .container-footer{
-    position: relative;
+    position: absolute;
     height: 20vh;
     padding: var(--spacing-small);
     margin-left:25%;
@@ -299,3 +321,24 @@ article.contenedor-article{
     margin-top: var(--spacing-medium);
     padding: var(--spacing-xxsmall);
 }
+
+/*  Formularios */
+.section__form {
+    display: flex;
+    flex-direction: column;
+    margin: 4% 34%;
+    height: auto;
+    width: 35%;
+    color: var(--primary);
+    font-size: var(--text-xsmall);
+    font-family: var(--font-principal);
+    border-radius: 4px;
+    padding: var(--spacing-medium);
+    background: var(--secondary);
+    box-shadow: 7px 13px 37px #000;
+  }
+
+  .form-table{
+    margin-top: var(--spacing-small);
+    padding: .1rem;
+  }

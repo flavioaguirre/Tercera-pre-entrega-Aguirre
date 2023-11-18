@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'empleos',
     'foro',
     'mi_perfil',
+    
+    # Other
+    'ckeditor'
 ]
 
 MIDDLEWARE = [

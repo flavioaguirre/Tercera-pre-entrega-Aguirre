@@ -7,10 +7,10 @@
 {% block main %}
     <main style="margin-top: 12%">
         <h1 class='text-center'>Registro Usuario</h1>
-        <form method="POST" style="max-height:100vh; padding: 3rem;">     
+        <form class='section__form' method="POST">     
             {% csrf_token %}
             {{ alerta }}
-            <table class="d-flex justify-content-center">
+            <table class="d-flex justify-content-center form-table">
                 {{ mi_formulario }}
             </table>
             <div class="d-flex justify-content-center p-5">
@@ -18,5 +18,4 @@
             </div>
         </form>
     </main>
-
 {% endblock main %}

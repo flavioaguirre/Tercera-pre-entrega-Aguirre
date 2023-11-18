@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 
 class Posteos(models.Model):
@@ -7,7 +8,7 @@ class Posteos(models.Model):
     descripcion_posteo = models.CharField(max_length=150)
     # imagen_posteo = models.ImageField(
     #     upload_to='./static/assets/img/inicio_blog/')
-    redaccion_posteo = models.TextField()
+    redaccion_posteo = RichTextField()
     autor_posteo = models.ForeignKey(User, on_delete=models.CASCADE)
     fecha_posteo = models.DateTimeField(auto_now_add=True)
     

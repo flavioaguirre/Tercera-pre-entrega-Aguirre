@@ -7,7 +7,7 @@
 
 {% block main %}
     <main class="d-f contenedor-main justify-content-center">
-        <section class="row contenedor-section contenedor-section-mis-posteos  p-20 col-md-11">
+        <section class="row contenedor-section p-20 col-md-11">
             <h1 class="h1_conenedor_section_mis_posteos text-center">Mis Posteos</h1>
             {% if posteos_del_usuario %}
                 {% for posteo in posteos_del_usuario %}
@@ -23,10 +23,8 @@
                                             <h5 class="card-title">{{ posteo.titulo_posteo }}</h5>
                                             <p class="card-text">{{ posteo.descripcion_posteo }}</p>
                                             <p class="card-text"><small class="text-body-secondary">{{ posteo.fecha_posteo }}</small></p>
-                                            <div class="grupo-botones-card">
-                                                <button type="button" class="btn btn_grupo-botones-card btn-primary"> Modificar </button>
-                                                <button type="button" class="btn btn_grupo-botones-card btn-danger"> Borrar </button>
-                                            </div>
+                                            <a href={% url "actualizar_posteo" posteo.id%}><input class="p-2" style="background-color: green; color: aliceblue;" type="button" value="Actualizar Post"></a>
+                                            <a href={% url "eliminar_posteo" posteo.id%}><input class="p-2" style="background-color: red; color: aliceblue;" type="button" value="Eliminar Post"></a>
                                         </div>
                                     </div>
                                 </div>
