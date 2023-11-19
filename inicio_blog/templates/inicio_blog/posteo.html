@@ -10,7 +10,7 @@
       <div class="container-posteo">
         <h1>{{ posteos.titulo_posteo }}</h1>
         <hr class="hr_posteo_completo">
-        <p>{{ posteos.redaccion_posteo }}</p>
+        <p>{{ posteos.redaccion_posteo | safe }}</p>
         <br>
         <br>
         <p><span>Fecha de publicación del Post:  {{ posteos.fecha_posteo }}</span></p>
