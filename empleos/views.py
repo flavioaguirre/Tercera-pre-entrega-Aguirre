@@ -20,11 +20,12 @@ def publicar_empleo(request):
             empleo_nuevo = Empleos(
                 titulo_empleo=titulo, descripcion_empleo=descripcion, autor_empleo=autor)
             empleo_nuevo.save()
-        return redirect('empleos')
-    else:
         return render(request, 'empleos/publicar_empleo.html', {
             'empleo_form': EmpleoForm,
             'alerta': 'Ingresa datos válidos por favor'})
+    return render(request, 'empleos/publicar_empleo.html', {
+            'empleo_form': EmpleoForm,
+            })
 
 def detalle_empleo(request, id):
     empleo = get_object_or_404(Empleos, pk=id)
