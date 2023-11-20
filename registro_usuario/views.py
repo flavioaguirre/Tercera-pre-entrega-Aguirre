@@ -14,8 +14,7 @@ def creacion_usuario(request):
                 user = User.objects.create_user(username=request.POST['username'],
                                                 password=request.POST['password1'])
                 user.save()
-                login(request, user)
-                return redirect('inicio_blog')
+                return redirect('login')
             except:
                 return render(request, 'registro.html', {
                     'mi_formulario': FormUsuarioNuevo,

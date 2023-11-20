@@ -12,7 +12,7 @@ def editar_perfil(request):
         formulario = EditarPerfil(request.POST, instance=request.user)
         if formulario.is_valid():
             formulario.save()
-            redirect('mi_perfil')
+            return redirect('mi_perfil')
     formulario = EditarPerfil(instance=request.user)
     return render(request, 'mi_perfil/editar_perfil.html', {
         'mi_formulario': formulario
