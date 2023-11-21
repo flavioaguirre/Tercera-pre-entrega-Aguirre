@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.models import User
 
 class EditarPerfil(UserChangeForm):
+    username = forms.CharField(label='Alias')
     email = forms.EmailField()
     first_name = forms.CharField(label='Nombre')
     last_name = forms.CharField(label='Apellido')
@@ -10,4 +11,4 @@ class EditarPerfil(UserChangeForm):
     
     class Meta():
         model = User
-        fields = ['email', 'first_name', 'last_name']
+        fields = ['username', 'email', 'first_name', 'last_name']

@@ -10,30 +10,31 @@ def inicio_blog(request):
             titulo_posteo__icontains=busqueda_especifica)
     else:
         lista_posteos = Posteos.objects.all().order_by('-fecha_posteo')
+    lista_posteos = Posteos.objects.all().order_by('-fecha_posteo')
     return render(request, 'inicio_blog/index.html', {'lista_posteos': lista_posteos})
 
 
 def creacion_posteo(request):
     if request.method == 'POST':
-        posteo_form = CreacionPosteoForm(request.POST)
+        posteo_form = CreacionPosteoForm(request.POST, request.FILES)
         if posteo_form.is_valid():
             datos_nuevo_posteo = posteo_form.cleaned_data
 
             titulo = datos_nuevo_posteo.get('titulo_posteo')
+            imagen = datos_nuevo_posteo.get('imagen_posteo')
             descripcion = datos_nuevo_posteo.get('descripcion_posteo')
             redaccion = datos_nuevo_posteo.get('redaccion_posteo')
             categoria = datos_nuevo_posteo.get('categoria_posteo')
             autor = request.user
 
             posteo_nuevo = Posteos(
-                titulo_posteo=titulo, descripcion_posteo=descripcion, redaccion_posteo=redaccion,
+                titulo_posteo=titulo, imagen_posteo=imagen ,descripcion_posteo=descripcion, redaccion_posteo=redaccion,
                 categoria_posteo=categoria, autor_posteo=autor)
             posteo_nuevo.save()
         return redirect('posteo_creado')
     else:
         return render(request, 'inicio_blog/creacion_post.html', {
-            'posteo_form': CreacionPosteoForm,
-            'alerta': 'Ingresa datos válidos por favor'})
+            'posteo_form': CreacionPosteoForm,})
 
 
 def posteo_creado(request):

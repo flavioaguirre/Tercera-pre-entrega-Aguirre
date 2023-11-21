@@ -5,9 +5,9 @@
 {% endblock title %}
 
 {% block main %}
-    <main class="contenedor-main d-f justify-content-center">
-        <h1 class='text-center'>Inicio sesion</h1>
-        <form action={% url "login" %} method="POST">
+    <main class="contenedor-main d-f flex-direction-column">
+        <h1 class='d-f justify-content-center'>Inicio sesion</h1>
+        <form action={% url "login" %} method="POST" class='section__form'>
             {% csrf_token %}
             {{ form.as_p }}
             <br>

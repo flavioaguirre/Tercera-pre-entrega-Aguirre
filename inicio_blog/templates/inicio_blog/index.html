@@ -15,7 +15,9 @@
                             <a href="{{ posteo.id }}">
                                 <div class="row g-0">
                                     <div class="col-md-4">
-                                        <img src={% static "assets/img/inicio_blog/img-tecno1.jfif" %} class="img-fluid rounded-start" alt="...">
+                                      {% if posteo.imagen_posteo %}
+                                        <img src="{{ posteo.imagen_posteo.url }}" class="img-fluid rounded-start" alt='{{ posteo.titulo_posteo }}'>
+                                      {% endif %}
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
