@@ -11,7 +11,7 @@
             {% csrf_token %}
             {{ alerta }}
             <table class="d-flex justify-content-center form-table">
-                {{ mi_formulario }}
+                    {{ mi_formulario.as_p }}
             </table>
             <div class="d-flex justify-content-center p-5">
                 <button class="btn btn-primary btn-form" type="submit">Registrarse</button>

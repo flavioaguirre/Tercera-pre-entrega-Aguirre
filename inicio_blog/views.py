@@ -10,7 +10,6 @@ def inicio_blog(request):
             titulo_posteo__icontains=busqueda_especifica)
     else:
         lista_posteos = Posteos.objects.all().order_by('-fecha_posteo')
-    lista_posteos = Posteos.objects.all().order_by('-fecha_posteo')
     return render(request, 'inicio_blog/index.html', {'lista_posteos': lista_posteos})
 
 
@@ -62,12 +61,13 @@ def eliminar_post(request, id):
 def actualizar_post(request, id):
     posteo_a_actualizar = Posteos.objects.get(id=id)
     if request.method == 'POST':
-        posteo_form = ActualizarPosteoForm(request.POST)
+        posteo_form = ActualizarPosteoForm(request.POST, request.FILES)
         if posteo_form.is_valid():
             datos_posteo_actualizado = posteo_form.cleaned_data
             
             posteo_a_actualizar.titulo_posteo = datos_posteo_actualizado.get('titulo_posteo')
             posteo_a_actualizar.descripcion_posteo = datos_posteo_actualizado.get('descripcion_posteo')
+            posteo_a_actualizar.imagen_posteo = datos_posteo_actualizado.get('imagen_posteo')
             posteo_a_actualizar.redaccion_posteo = datos_posteo_actualizado.get('redaccion_posteo')
             
             posteo_a_actualizar.save()
@@ -76,5 +76,7 @@ def actualizar_post(request, id):
         'posteo_form': ActualizarPosteoForm(initial={
             'titulo_posteo':posteo_a_actualizar.titulo_posteo,
             'descripcion_posteo':posteo_a_actualizar.descripcion_posteo,
-            'redaccion_posteo':posteo_a_actualizar.redaccion_posteo,})
+            'imagen_posteo':posteo_a_actualizar.imagen_posteo,
+            'redaccion_posteo':posteo_a_actualizar.redaccion_posteo,
+            })
     })
