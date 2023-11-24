@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import EditarPerfil
 
 def mi_perfil(request):
-    formulario = EditarPerfil(instance=request.user)
+    formulario = EditarPerfil(initial={'email':request.user.email}, instance=request.user)
     return render(request, 'mi_perfil/mi_perfil.html', {
         'mi_formulario': formulario
     })

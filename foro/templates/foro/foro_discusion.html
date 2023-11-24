@@ -7,32 +7,28 @@
 {% block main %}
   <main class="contanier contenedor-main d-f">
     <section class="row contenedor-section p-20 col-md-9">
-      {% for comentario in foro %}
-        <article class="conteiner-article">
-          <div class="card mb-3" style="max-width: 90%;">
-            <div class="col-md-8">
-              <div class="card-body">
-                <figure class="figure_container mt-4">
-                  <blockquote class="blockquote">
-                    <p class="">{{ comentario.comentario }}</p>
-                  </blockquote>
-                  <figcaption class="blockquote-footer mt-5">
-                    <cite title="Source Title">Usuario: {{ comentario.usuario }}, {{ comentario.fecha_comentario }}</cite>
-                  </figcaption>
-                </figure>
+      {% if foro %}
+        {% for comentario in foro %}
+          <article class="conteiner-article">
+            <div class="card mb-3" style="max-width: 90%;">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <figure class="figure_container mt-4">
+                    <blockquote class="blockquote">
+                      <p>{{ comentario.comentario | safe }}</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer mt-5">
+                      <cite title="Source Title">Usuario: {{ comentario.usuario }}, {{ comentario.fecha_comentario }}</cite>
+                    </figcaption>
+                  </figure>
+                </div>
               </div>
             </div>
-          </div>
-        </article>
-      {% endfor %}
+          </article>
+        {% endfor %}
+      {% else %}
+          <h3>Todavía no se ha comentado nada...</h3>
+      {% endif %}
     </section>
-    <aside class="container container-aside">
-        <ul class="row list-group">
-            <li class="list-group-item active col-md-10" aria-current="true">Temas</li>
-            <li class="list-group-item col-md-10"><a href="#" name="Programación">Programación</a></li>
-            <li class="list-group-item col-md-10"><a href="#" name="Robótica">Robótica</a></li>
-            <li class="list-group-item col-md-10"><a href="#" name="Matemáticas">Inteligencia Artificial</a></li>
-        </ul>
-    </aside>
   </main>
 {% endblock main %}

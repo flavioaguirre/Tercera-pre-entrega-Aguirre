@@ -12,5 +12,5 @@ class CreacionPosteoForm(forms.ModelForm):
 class ActualizarPosteoForm(forms.ModelForm):
     class Meta:
         model = Posteos
-        fields = ('titulo_posteo', 'descripcion_posteo', 'redaccion_posteo', 'imagen_posteo')
+        fields = ('titulo_posteo', 'descripcion_posteo', 'imagen_posteo', 'redaccion_posteo',)
         

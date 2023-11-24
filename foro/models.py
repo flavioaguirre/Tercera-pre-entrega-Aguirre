@@ -1,8 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 class Foro(models.Model):
-    comentario = models.CharField(max_length=200)
+    comentario = RichTextField()
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     fecha_comentario = models.DateTimeField(auto_now_add=True)
     

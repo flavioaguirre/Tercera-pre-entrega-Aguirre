@@ -9,26 +9,30 @@
     <main class="contenedor-main d-f justify-content-center">
         <section class="row contenedor-section p-20 col-md-12">
             <h1 class="text-center" style="padding-bottom: 3%;">Bolsa de empleos</h1>
-            {% for empleo in lista_empleos %}
-                <article class="conteiner-article">
-                    <div class="card mb-3" style="max-width: 90%;">
-                        <a href="{{ empleo.id }}">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src={% static "assets/img/empleos/portfolio-img.png" %} class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">{{ empleo.titulo_empleo }}</h5>
-                                        <p class="card-text text-center">{{ empleo.descripcion_empleo }}</p>
-                                        <p class="card-text"><small class="text-body-secondary">{{ empleo.fecha_publicacion_empleo }}</small></p>
+            {% if lista_empleos %}
+                {% for empleo in lista_empleos %}
+                    <article class="conteiner-article">
+                        <div class="card mb-3" style="max-width: 90%;">
+                            <a href="{{ empleo.id }}">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src={% static "assets/img/empleos/portfolio-img.png" %} class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">{{ empleo.titulo_empleo }}</h5>
+                                            <p class="card-text text-center">{{ empleo.descripcion_empleo | safe }}</p>
+                                            <p class="card-text"><small class="text-body-secondary">{{ empleo.fecha_publicacion_empleo }}</small></p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                </article>
-            {% endfor %}
+                            </a>
+                        </div>
+                    </article>
+                {% endfor %}
+            {% else %}
+                    <h3>Todavía no se ha publicado ningún empleo.</h3>
+            {% endif %}
         </section>
     </main>
 {% endblock main %}

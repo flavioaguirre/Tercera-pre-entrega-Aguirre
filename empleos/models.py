@@ -1,9 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 class Empleos(models.Model):
     titulo_empleo = models.CharField(max_length=100)
-    descripcion_empleo = models.TextField()
+    descripcion_empleo = RichTextField()
     autor_empleo = models.ForeignKey(User, on_delete=models.CASCADE)
     fecha_publicacion_empleo = models.DateTimeField(auto_now_add=True)
 

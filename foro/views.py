@@ -28,7 +28,7 @@ def comentar_foro(request):
             'foro_form': ForoForm,})
 
 
-class EliminarComentario(DeleteView):
-    model = Foro
-    template_name = "eliminar_comentario.html"
-    success_url = reverse_lazy('eliminar_comentario')
+# class EliminarComentario(DeleteView):
+#     model = Foro
+#     template_name = "eliminar_comentario.html"
+#     success_url = reverse_lazy('eliminar_comentario')
