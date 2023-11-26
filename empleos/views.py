@@ -1,30 +1,37 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
+
+from django.views.generic.base import TemplateView
+from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView
+from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
+from django.views.generic.detail import DetailView
+
 from .models import Empleos
-from .forms import EmpleoForm
 
 
-def lista_empleos(request):
-    lista_empleos = Empleos.objects.all().order_by('-fecha_publicacion_empleo')
-    return render(request, 'empleos/lista_empleos.html', {'lista_empleos': lista_empleos})
+class ListaEmpleos(ListView):
+    model = Empleos
+    context_object_name = 'lista_empleos'
+    template_name = "empleos/lista_empleos.html"
 
-def publicar_empleo(request):
-    if request.method == 'POST':
-        empleo_form = EmpleoForm(request.POST)
-        if empleo_form.is_valid():
-            datos_nuevo_empleo = empleo_form.cleaned_data
+class PublicarEmpleo(CreateView):
+    model = Empleos
+    template_name = "empleos/publicar_empleo.html"
+    fields = ['titulo_empleo', 'empresa','descripcion_empleo']
+    success_url = reverse_lazy('empleo_creado')
+    
+class Felicidades(TemplateView):
+    template_name = "empleos/empleo_creado.html"
 
-            titulo = datos_nuevo_empleo.get('titulo_empleo')
-            descripcion = datos_nuevo_empleo.get('descripcion_empleo')
-            autor = request.user
+class DetalleEmpleo(DetailView):
+    model = Empleos
+    template_name = "empleos/detalle_empleo.html"
 
-            empleo_nuevo = Empleos(
-                titulo_empleo=titulo, descripcion_empleo=descripcion, autor_empleo=autor)
-            empleo_nuevo.save()
-        return redirect('empleos')
-    return render(request, 'empleos/publicar_empleo.html', {
-            'empleo_form': EmpleoForm,
-            })
+class ActualizarEmpleo(UpdateView):
+    model = Empleos
+    template_name = "empleos/actualizar_empleo.html"
+    fields = ['titulo_empleo', 'empresa','descripcion_empleo']
+    success_url = reverse_lazy('empleos')
 
-def detalle_empleo(request, id):
-    empleo = get_object_or_404(Empleos, pk=id)
-    return render(request, 'empleos/detalle_empleo.html', {'empleo': empleo})

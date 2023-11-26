@@ -1,22 +1,23 @@
 {% extends "base.html" %}
 
 {% block title %}
-  <title>{{ empleo.titulo_empleo }} | Empleos</title>
+  <title>{{ empleos.titulo_empleo }} | Empleos</title>
 {% endblock title %}
 
 {% block main %}
   <main class="contenedor-main d-f justify-content-center">
     <section class="row contenedor-section p-20 col-md-12">
       <div class="">
-        <h1 style="text-align:center">{{ empleo.titulo_empleo }}</h1>
-        <p>{{ empleo.redaccion_empleo }}</p>
+        <h1 style="text-align:center">{{ empleos.titulo_empleo }}</h1>
+        <br>
+        {{ empleos.descripcion_empleo | safe }}
         <br>
         <br>
-        <p><span>Fecha de publicación del Post:  {{ empleo.fecha_publicacion_empleo}}</span></p>
-        <p><span>Autor del Post:  {{ empleo.autor_empleo }}</span></p>
+        <p><span>Fecha de publicación:  {{ empleos.fecha_publicacion_empleo }}</span></p>
+        <p><span>Empresa contratista:  {{ empleos.empresa }}</span></p>
         <br>
         <br>
-        <a href={% url "inicio_blog" %}><p>Volver al inicio</p></a>
+        <a href={% url "empleos" %}><p>Volver atrás</p></a>
       </div>
     </section>
   </main>

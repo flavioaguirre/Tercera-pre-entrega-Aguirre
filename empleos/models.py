@@ -5,7 +5,7 @@ from ckeditor.fields import RichTextField
 class Empleos(models.Model):
     titulo_empleo = models.CharField(max_length=100)
     descripcion_empleo = RichTextField()
-    autor_empleo = models.ForeignKey(User, on_delete=models.CASCADE)
+    empresa = models.CharField(max_length=50)
     fecha_publicacion_empleo = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
