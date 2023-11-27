@@ -14,6 +14,9 @@ class ListaEmpleos(ListView):
     model = Empleos
     context_object_name = 'lista_empleos'
     template_name = "empleos/lista_empleos.html"
+    
+    def get_queryset(self):
+        return Empleos.objects.all().order_by('-fecha_publicacion_empleo')
 
 class PublicarEmpleo(CreateView):
     model = Empleos
