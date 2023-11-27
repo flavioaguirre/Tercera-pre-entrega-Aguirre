@@ -1,3 +1,5 @@
+from django.shortcuts import render
+
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -28,17 +30,21 @@ class DetalleEmpleo(DetailView):
 
 class EmpleosPublicados(ListView):
     model = Empleos
-    context_object_name = ''
+    context_object_name = 'empleos_publicados'
     template_name = "empleos/empleos_publicados.html"
+    
+    def get_queryset(self):
+        return Empleos.objects.filter(empresa=self.request.user)
 
 class ActualizarEmpleo(UpdateView):
     model = Empleos
     template_name = "empleos/actualizar_empleo.html"
     fields = ['titulo_empleo', 'empresa','descripcion_empleo']
-    success_url = reverse_lazy('empleos')
+    success_url = reverse_lazy('empleos_publicados')
 
 class EliminarEmpleo(DeleteView):
     model = Empleos
     template_name = "empleos/eliminar_empleo.html"
+    success_url = reverse_lazy('empleos_publicados')
 
 

@@ -9,24 +9,22 @@
     <main class="d-f contenedor-main justify-content-center">
         <section class="row contenedor-section p-20 col-md-11">
             <h1 class="h1_conenedor_section_mis_posteos text-center">Empleos Publicados</h1>
-            {% if posteos_del_usuario %}
-                {% for posteo in posteos_del_usuario %}
+            {% if empleos_publicados %}
+                {% for empleo in empleos_publicados %}
                     <article class="conteiner-article_mis_posteos">
                         <div class="card mb-3" style="max-width: 90%;">
-                            <a href="{{ posteo.id }}">
+                            <a href="{{ empleo.id }}">
                                 <div class="row g-0">
                                     <div class="col-md-4">
-                                        {% if posteo.imagen_posteo %}
-                                            <img src="{{ posteo.imagen_posteo.url }}" class="img-fluid rounded-start" alt='{{ posteo.titulo_posteo }}'>
-                                        {% endif %}
+                                        <img src={% static 'assets/img/empleos/portfolio-img.png' %} class="img-fluid rounded-start" alt='{{ posteo.titulo_posteo }}'>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <h5 class="card-title">{{ posteo.titulo_posteo }}</h5>
-                                            <p class="card-text">{{ posteo.descripcion_posteo }}</p>
-                                            <p class="card-text"><small class="text-body-secondary">{{ posteo.fecha_posteo }}</small></p>
-                                            <a href={% url "actualizar_posteo" posteo.id %}><input class="p-2" style="background-color: green; color: aliceblue;" type="button" value="Actualizar Post"></a>
-                                            <a href={% url "eliminar_posteo" posteo.id %}><input class="p-2" style="background-color: red; color: aliceblue;" type="button" value="Eliminar Post"></a>
+                                            <h5 class="card-title">{{ empleo.titulo_empleo }}</h5>
+                                            <p class="card-text">{{ empleo.descripcion_empleo | safe }}</p>
+                                            <p class="card-text"><small class="text-body-secondary">{{ empleo.fecha_publicacion_empleo }}</small></p>
+                                            <a href={% url "actualizar_empleo" empleo.id %}><input class="p-2" style="background-color: green; color: aliceblue;" type="button" value="Actualizar empleo"></a>
+                                            <a href={% url "eliminar_empleo" empleo.id %}><input class="p-2" style="background-color: red; color: aliceblue;" type="button" value="Eliminar empleo"></a>
                                         </div>
                                     </div>
                                 </div>
