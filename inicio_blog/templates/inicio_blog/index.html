@@ -5,6 +5,7 @@
   <title>Inicio | TechBlog</title>
 {% endblock title %}
 
+
 {% block main %}
     <main class="contanier contenedor-main d-f">
         <section class="row contenedor-section p-20 col-md-9">
@@ -32,46 +33,51 @@
                         </div>
                     </article>
                 {% endfor %}
-                {% else %}
-                <h3>No se ha publicado nada hasta el momento.</h3>
+            {% else %}
+                <h3>No existe publicación hasta el momento.</h3>
             {% endif %}
         </section>
         <aside class="container container-aside">
           <h2 class="container-aside_h2">Los 3 de la semana:</h2>
           <div class="carousel-aside-container">
-            <a href="#" target="_blank">
               <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="card mb-3">
-                      <img src={% static "assets/img/inicio_blog/img-tecno5.jfif" %} class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Mejor Título 1</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  <a href="#" target="_blank">
+                    <div class="carousel-item active">
+                      <div class="card mb-3">
+                        <img src={% static "assets/img/inicio_blog/img-tecno5.jfif" %} class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Mejor Título 1</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="card mb-3">
-                      <img src={% static "assets/img/inicio_blog/img-tecno2.jfif" %} class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Mejor Título 2</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </a>
+                  <a href="#" target="_blank">
+                    <div class="carousel-item">
+                      <div class="card mb-3">
+                        <img src={% static "assets/img/inicio_blog/img-tecno2.jfif" %} class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Mejor Título 2</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="card mb-3">
-                      <img src={% static "assets/img/inicio_blog/img-tecno3.jfif" %} class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Mejor Título 3</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </a>
+                  <a href="#" target="_blank">
+                    <div class="carousel-item">
+                      <div class="card mb-3">
+                        <img src={% static "assets/img/inicio_blog/img-tecno3.jfif" %} class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Mejor Título 3</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>

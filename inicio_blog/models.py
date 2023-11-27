@@ -11,7 +11,6 @@ class Posteos(models.Model):
     autor_posteo = models.ForeignKey(User, on_delete=models.CASCADE)
     fecha_posteo = models.DateTimeField(auto_now_add=True)
     
-    
     CATEGORIAS = [
         ('Programacion', 'Programación'),
         ('Robotica', 'Robótica'),

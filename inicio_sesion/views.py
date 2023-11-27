@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-# from django.contrib.auth.forms import AuthenticationForm
-from .forms import LoginForm
 from django.contrib.auth import login, authenticate
+
+from mi_perfil.models import DatosExtrasUsuario
+from .forms import LoginForm
 
 
 def inicio_sesion(request):
@@ -12,6 +13,7 @@ def inicio_sesion(request):
             password = form.cleaned_data.get('password')
             user = authenticate(request, username=usuario, password=password)
             login(request, user)
+            DatosExtrasUsuario.objects.get_or_create(user=request.user)
             return redirect('inicio_blog')
         return render(request, 'inicio_sesion.html', {
             'form': LoginForm,

@@ -5,10 +5,11 @@ from django.contrib.auth.models import User
 class EditarPerfil(UserChangeForm):
     username = forms.CharField(label='Alias')
     email = forms.EmailField()
-    first_name = forms.CharField(label='Nombre')
-    last_name = forms.CharField(label='Apellido')
+    first_name = forms.CharField(label='Nombre', required=False)
+    last_name = forms.CharField(label='Apellido', required=False)
     password = None
+    biografia_usuario = forms.CharField(label='Mi Biografía', required=False, widget=forms.Textarea)
     
     class Meta():
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name']
+        fields = ['username', 'email', 'first_name', 'last_name', 'biografia_usuario',]

@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+
 from .models import Posteos
 from .forms import CreacionPosteoForm, ActualizarPosteoForm
 
@@ -7,7 +9,7 @@ def inicio_blog(request):
     busqueda_especifica = request.GET.get('titulo_posteo')
     if busqueda_especifica:
         lista_posteos = Posteos.objects.filter(
-            titulo_posteo__icontains=busqueda_especifica)
+            titulo_posteo__icontains=busqueda_especifica).order_by('-fecha_posteo')
     else:
         lista_posteos = Posteos.objects.all().order_by('-fecha_posteo')
     return render(request, 'inicio_blog/index.html', {'lista_posteos': lista_posteos})
@@ -80,3 +82,8 @@ def actualizar_post(request, id):
             'redaccion_posteo':posteo_a_actualizar.redaccion_posteo,
             })
     })
+
+# @login_required
+# def mejor_posteo(request):
+#     posteo_elegido = Posteos.objects.get(id)
+#     return render(request, 'inicio_blog/mejor_posteo.html', {'posteo': posteo_elegido})

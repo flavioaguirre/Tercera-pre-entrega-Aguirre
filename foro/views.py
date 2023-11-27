@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+
 from django.views.generic.list import ListView
 from django.views.generic.edit import DeleteView
+
 from .models import Foro
 from .forms import ForoForm
+
 
 class ListadoComentarios(ListView):
     model = Foro
@@ -27,8 +30,3 @@ def comentar_foro(request):
         return render(request, 'foro/publicar_comentario.html', {
             'foro_form': ForoForm,})
 
-
-# class EliminarComentario(DeleteView):
-#     model = Foro
-#     template_name = "eliminar_comentario.html"
-#     success_url = reverse_lazy('eliminar_comentario')

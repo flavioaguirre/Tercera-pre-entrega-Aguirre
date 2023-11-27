@@ -11,9 +11,13 @@
             <form method="POST" style="max-height:100vh; padding: 3rem;">
                 <h3 class="p-3">{{ request.user.username }}</h3>
                 {% csrf_token %}
-                <table >
-                    {{ mi_formulario }}
-                </table>
+                <ul>
+                    <li>Alias : {{ request.user.username }}</li>
+                    <li>Email : {{ request.user.email }}</li>
+                    <li>Nombre : {{ request.user.first_name }}</li>
+                    <li>Apellido : {{ request.user.last_name }}</li>
+                    <li>Mi Biografía : {{ biografia_usuario }}</li>
+                </ul>
                 <div class="d-flex justify-content-center p-5">
                     <a href={% url "editar_perfil" %}><button class="btn btn-primary btn-form" type="button">Editar Perfil</button>
                 </div>
