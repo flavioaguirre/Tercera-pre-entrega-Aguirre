@@ -2,8 +2,8 @@ from django.db import models
 from ckeditor.fields import RichTextField
 
 class Empleos(models.Model):
-    titulo_empleo = models.CharField(max_length=100)
-    empresa = models.CharField(max_length=50)
+    titulo_empleo = models.CharField(max_length=120)
+    empresa = models.CharField(max_length=70)
     descripcion_empleo = RichTextField()
     fecha_publicacion_empleo = models.DateTimeField(auto_now_add=True)
 

@@ -4,8 +4,8 @@ from ckeditor.fields import RichTextField
 
 
 class Posteos(models.Model):
-    titulo_posteo = models.CharField(max_length=100)
-    descripcion_posteo = models.CharField(max_length=150)
+    titulo_posteo = models.CharField(max_length=120)
+    descripcion_posteo = models.CharField(max_length=200)
     imagen_posteo = models.ImageField(upload_to='img_card_blog/', null=True, blank=True)
     redaccion_posteo = RichTextField()
     autor_posteo = models.ForeignKey(User, on_delete=models.CASCADE)
