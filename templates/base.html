@@ -25,7 +25,18 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     {% if user.is_authenticated %}
-                        <p style='margin-left: 2rem;'><a href={% url "mi_perfil" %} title="Ir a mi perfil" > Accediste como: {{ request.user.username }} </a></p>
+                        <div class="d-f justify-content-space-beetwen">
+                            <p style='margin-left: 2rem;'>
+                                <a href={% url "mi_perfil" %} title="Ir a mi perfil" > 
+                                    Accediste como: {{ request.user.username }} 
+                                </a>
+                                <a title="Cerrar Sesión" href={% url "logout" %}>
+                                    <svg style="margin-left: 13rem;" xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor" class="bi bi-door-open-fill icono-nav" viewBox="0 0 16 16">
+                                        <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
+                                    </svg>
+                                </a>
+                            </p>
+                        </div>
                     {% endif %}
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -55,6 +66,12 @@
                                   </svg>Empleos</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href={% url "empleos_publicados" %}><svg class="icono-nav" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journals" viewBox="0 0 16 16">
+                                    <path d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2"/>
+                                    <path d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0"/>
+                                  </svg>Empleos Publicados</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href={% url "pubicar_empleo" %}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-megaphone-fill icono-nav" viewBox="0 0 16 16">
                                     <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-11zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25.222 25.222 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56V3.224zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009a68.14 68.14 0 0 1 .496.008 64 64 0 0 1 1.51.048zm1.39 1.081c.285.021.569.047.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a65.81 65.81 0 0 1 1.692.064c.327.017.65.037.966.06z"/>
                                   </svg>Publicar empleo</a>
@@ -69,12 +86,6 @@
                                 <a class="nav-link" href={% url "comentar_foro" %}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-text-fill icono-nav" viewBox="0 0 16 16">
                                     <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM4.5 5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7zm0 2.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7zm0 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4z"/>
                                   </svg>Nuevo Comentario</a>
-                            </li>
-                            <li class="nav-item">
-                                <hr class="hr_navbar-nav">
-                                <a class="nav-link" href={% url "logout" %}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open-fill icono-nav" viewBox="0 0 16 16">
-                                    <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
-                                  </svg>Cerrar sesión</a>
                             </li>
                             {% else %}
                             <li class="nav-item">
@@ -94,7 +105,7 @@
                 </div>
                 <h1 class="h1_brand_navbar"><a class="navbar-brand brand_navbar" href={% url "inicio_blog" %}>TechBlog</a></h1>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-1" type="search" placeholder="Buscar un Post" name="titulo_posteo" aria-label="Search">
+                    <input class="form-control me-1" type="search" placeholder="Buscar Post" name="titulo_posteo" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
