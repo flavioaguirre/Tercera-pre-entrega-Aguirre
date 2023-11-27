@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  <title>Eliminar empleo | TechBlog</title>
+{% endblock title %}
+
+{% block main %}
+    <main class="contenedor-main d-f justify-content-center">
+        <form method="POST" style='margin-top:2rem;width: 100%;' class='section__form'>
+            {% csrf_token %}
+            <h1 class='text-center'> Desea realmente eliminar esta publicación?</h1>
+            <p>
+                <strong>
+                    {{ empleo.titulo_empleo }}
+                </strong>
+            </p>
+            <a href={% url "empleos_publicados" %}>
+                <button type="submit" value="Confirmar"></button>
+            </a>
+        </form>
+    </main>
+{% endblock main %}
