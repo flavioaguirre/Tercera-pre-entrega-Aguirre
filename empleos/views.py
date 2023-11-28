@@ -5,12 +5,13 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 
 from .models import Empleos
 
 
-class ListaEmpleos(ListView):
+class ListaEmpleos(LoginRequiredMixin, ListView):
     model = Empleos
     context_object_name = 'lista_empleos'
     template_name = "empleos/lista_empleos.html"
@@ -18,7 +19,7 @@ class ListaEmpleos(ListView):
     def get_queryset(self):
         return Empleos.objects.all().order_by('-fecha_publicacion_empleo')
 
-class PublicarEmpleo(CreateView):
+class PublicarEmpleo(LoginRequiredMixin,CreateView):
     model = Empleos
     template_name = "empleos/publicar_empleo.html"
     fields = ['titulo_empleo', 'empresa','descripcion_empleo']
@@ -31,7 +32,7 @@ class DetalleEmpleo(DetailView):
     model = Empleos
     template_name = "empleos/detalle_empleo.html"
 
-class EmpleosPublicados(ListView):
+class EmpleosPublicados(LoginRequiredMixin, ListView):
     model = Empleos
     context_object_name = 'empleos_publicados'
     template_name = "empleos/empleos_publicados.html"

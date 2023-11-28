@@ -162,7 +162,7 @@ btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.b
 
 .offcanvas-body{
     margin: var(--spacing-xsmall) var(--spacing-medium) 0 0;
-    padding: var(--spacing-xsmall);
+    padding: var(--spacing-small);
 }
 
 /* ----- Titulo del nav */

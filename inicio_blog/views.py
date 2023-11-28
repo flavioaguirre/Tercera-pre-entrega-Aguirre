@@ -14,6 +14,7 @@ def inicio_blog(request):
         lista_posteos = Posteos.objects.all().order_by('-fecha_posteo')
     return render(request, 'inicio_blog/index.html', {'lista_posteos': lista_posteos})
 
+@login_required
 def creacion_posteo(request):
     if request.method == 'POST':
         posteo_form = CreacionPosteoForm(request.POST, request.FILES)
@@ -43,6 +44,7 @@ def posteo_completo(request, id):
     posteos = get_object_or_404(Posteos, pk=id)
     return render(request, 'inicio_blog/posteo.html', {'posteos': posteos})
 
+@login_required
 def mis_posteos(request):
     lista_posteos = Posteos.objects.all()
     posteos_del_usuario = Posteos.objects.filter(autor_posteo=request.user).order_by('-fecha_posteo')

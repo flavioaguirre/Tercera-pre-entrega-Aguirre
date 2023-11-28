@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 
 from django.views.generic.list import ListView
@@ -12,8 +13,11 @@ class ListadoComentarios(ListView):
     model = Foro
     context_object_name = 'foro'
     template_name = "foro/foro_discusion.html"
+    
+    def get_queryset(self):
+        return Foro.objects.all().order_by('-fecha_comentario')
 
-
+@login_required
 def comentar_foro(request):
     if request.method == 'POST':
         foro_form = ForoForm(request.POST)
