@@ -14,7 +14,6 @@ def inicio_blog(request):
         lista_posteos = Posteos.objects.all().order_by('-fecha_posteo')
     return render(request, 'inicio_blog/index.html', {'lista_posteos': lista_posteos})
 
-
 def creacion_posteo(request):
     if request.method == 'POST':
         posteo_form = CreacionPosteoForm(request.POST, request.FILES)
@@ -37,15 +36,12 @@ def creacion_posteo(request):
         return render(request, 'inicio_blog/creacion_post.html', {
             'posteo_form': CreacionPosteoForm,})
 
-
 def posteo_creado(request):
     return render(request, 'inicio_blog/posteo_creado.html',)
-
 
 def posteo_completo(request, id):
     posteos = get_object_or_404(Posteos, pk=id)
     return render(request, 'inicio_blog/posteo.html', {'posteos': posteos})
-
 
 def mis_posteos(request):
     lista_posteos = Posteos.objects.all()
@@ -53,12 +49,10 @@ def mis_posteos(request):
     return render(request, 'inicio_blog/mis_posts.html', {'posteos_del_usuario': posteos_del_usuario,
                   'lista_posteos': lista_posteos})
 
-
 def eliminar_post(request, id):
     post_a_eliminar = Posteos.objects.get(id=id)
     post_a_eliminar.delete()
     return redirect('mis_posteos')
-
 
 def actualizar_post(request, id):
     posteo_a_actualizar = Posteos.objects.get(id=id)
@@ -83,7 +77,17 @@ def actualizar_post(request, id):
             })
     })
 
-# @login_required
-# def mejor_posteo(request):
-#     posteo_elegido = Posteos.objects.get(id)
-#     return render(request, 'inicio_blog/mejor_posteo.html', {'posteo': posteo_elegido})
+@login_required
+def mejor_posteo_1(request):
+    posteo_elegido = get_object_or_404(Posteos, pk=2)
+    return render(request, 'inicio_blog/mejor_posteo.html', {'posteo_elegido': posteo_elegido})
+
+@login_required
+def mejor_posteo_2(request):
+    posteo_elegido = get_object_or_404(Posteos, pk=2)
+    return render(request, 'inicio_blog/mejor_posteo.html', {'posteo_elegido': posteo_elegido})
+
+@login_required
+def mejor_posteo_3(request):
+    posteo_elegido = get_object_or_404(Posteos, pk=6)
+    return render(request, 'inicio_blog/mejor_posteo.html', {'posteo_elegido': posteo_elegido})

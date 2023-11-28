@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>{{ posteo_elegido.titulo_posteo }}</title>
+{% endblock title %}
+
+{% block main %}
+
+  <main class="contenedor-main">
+      <section class="row contenedor-section p-20 col-md-12">
+        <h1 class="text-center p-3">{{ posteo_elegido.titulo_posteo }}</h1>
+        <img src={{ posteo_elegido.imagen_posteo.url }} alt=f"{{ posteo_elegido.titluo_posteo }}">
+        <div class="container-posteo">
+          <hr class="hr_posteo_completo">
+          <p>{{ posteo_elegido.redaccion_posteo | safe }}</p>
+          <br>
+          <br>
+          <p><span>Fecha de publicación del Post:  {{ posteo_elegido.fecha_posteo }}</span></p>
+          <p><span>Autor del Post:  {{ posteo_elegido.autor_posteo }}</span></p>
+          <p><span>Categoría del Post:  {{ posteo_elegido.categoria_posteo }}</span></p>
+          <br>
+          <br>
+          <a href="#" title="Volver al inicio"><p class="text-end"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+          </svg></p></a>
+        </div>
+      </section>
+  </main>
+{% endblock main %}
