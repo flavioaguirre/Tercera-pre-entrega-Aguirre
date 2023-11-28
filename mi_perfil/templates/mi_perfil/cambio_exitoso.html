@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}
+  <title>Tu contraseña se ha cambiado | TechBlog</title>
+{% endblock title %}
+
+
+{% block main %}
+    <main class="contenedor-main" style="display: block;">
+        <h1 class="text-center">Tu contraseña se ha cambiado con éxito!</h1>
+        <a class="d-f justify-content-center" href={% url "login" %}><button class="btn btn-primary btn-form" type="button">Volver a ingresar</button></a>
+    </main>
+{% endblock main %}

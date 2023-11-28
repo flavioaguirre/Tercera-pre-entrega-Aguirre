@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.views import PasswordChangeView
+from django.views.generic.base import TemplateView
+from django.urls import reverse_lazy
 
 from .forms import EditarPerfil
 from .models import DatosExtrasUsuario
@@ -30,3 +33,10 @@ def editar_perfil(request):
     return render(request, 'mi_perfil/editar_perfil.html', {
         'mi_formulario': formulario
     })
+
+class CambioPassword(PasswordChangeView):
+    template_name = "mi_perfil/change_password.html"
+    success_url = reverse_lazy('cambio_exitoso')
+
+class CambioExitoso(TemplateView):
+    template_name = 'mi_perfil/cambio_exitoso.html'
