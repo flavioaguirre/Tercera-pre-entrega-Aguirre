@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  <title>Mensajes enviados | TechBlog</title>
+{% endblock title %}
+
+
+{% block main %}
+    <main class="contanier contenedor-main d-f">
+        <section class="row contenedor-section p-20 col-md-12 ">
+            <h1 class="text-center p-2 mb-5">Mensajes enviados</h1>
+            <div class="">
+                {% if mensaje %}
+                    {% for mensaje in mensaje %}
+                        <div class="card mb-3" style="max-width: 90%;">
+                            <div class="col-md-8">         
+                                <div class="card-body">
+                                    <figure class="figure_container mt-4">
+                                        <blockquote class="blockquote">
+                                            <p>{{ mensaje.contenido | safe }}</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer mt-5">
+                                            <cite title="Source Title">Enviado a: {{ mensaje.receptor.username }}, {{ mensaje.fecha_envio }}</cite>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <h3 class="p-4">Todavía no has enviado ningún mensaje.</h3>
+                {% endif %}              
+            </div>
+            <a class="p-5" href="../">Volver atras</a>
+        </section>
+    </main>
+{% endblock main %}

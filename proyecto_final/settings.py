@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,8 +47,9 @@ INSTALLED_APPS = [
     'empleos',
     'foro',
     'mi_perfil',
+    'mensajeria',
     
-    # Other
+    # Other apps
     'ckeditor'
 ]
 

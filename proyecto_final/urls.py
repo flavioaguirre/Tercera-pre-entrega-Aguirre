@@ -28,4 +28,5 @@ urlpatterns = [
     path('empleos/', include('empleos.urls')),
     path('foro/', include('foro.urls')),
     path('mi_perfil/', include('mi_perfil.urls')),
+    path('mensajeria/', include('mensajeria.urls')),
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

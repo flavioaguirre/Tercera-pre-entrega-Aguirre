@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href={% static 'css/style.css' %}>
+{% endblock style %}
+
+{% block title %}
+  <title>Menú de mensajeria | TechBlog</title>
+{% endblock title %}
+
+
+{% block main %}
+    <main class="contanier contenedor-main d-f">
+        <section class="row contenedor-section p-20 col-md-12 ">
+            <h1 class="text-center p-2 mb-5">Menú Principal Mensajería</h1>
+            <div class="d-grid gap-3 col-3 mx-auto">
+                <button class="btn btn-primary btn-mensajeria" type="button"><a style="color: aliceblue;" href={% url "bandeja_entrada" %}>Bandeja de entrada</a></button>
+                <button class="btn btn-primary btn-mensajeria" type="button"><a style="color: aliceblue;" href={% url "enviar_mensaje" %}>Enviar mensaje</a></button>
+                <button class="btn btn-primary btn-mensajeria" type="button"><a style="color: aliceblue;" href={% url "mensajes_enviados" %}>Mensajes enviados</a></button>
+              </div>
+        </section>
+    </main>
+{% endblock main %}            

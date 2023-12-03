@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+
 from django.contrib.auth.views import PasswordChangeView
 from django.views.generic.base import TemplateView
-from django.urls import reverse_lazy
+
 
 from .forms import EditarPerfil
 from .models import DatosExtrasUsuario
