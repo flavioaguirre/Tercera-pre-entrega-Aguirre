@@ -9,7 +9,8 @@ class EditarPerfil(UserChangeForm):
     last_name = forms.CharField(label='Apellido', required=False)
     password = None
     biografia_usuario = forms.CharField(label='Mi Biografía', required=False, widget=forms.Textarea)
+    avatar = forms.ImageField(label='Mi Avatar', required=False)
     
     class Meta():
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name', 'biografia_usuario',]
+        fields = ['username', 'avatar' , 'email', 'first_name', 'last_name', 'biografia_usuario',]

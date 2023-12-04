@@ -7,14 +7,14 @@
 {% block main %}
     <main style="margin-top: 12%">
         <h1 class='text-center'>Editar Perfil</h1>
-        <form method="POST" style="max-height:100vh; padding: 3rem;">     
+        <form method="POST" class='section__form w-100 m-0' enctype="multipart/form-data">     
             {% csrf_token %}
             {{ alerta }}
             <table class="d-flex justify-content-center">
                 {{ mi_formulario }}
             </table>
-            <button class="btn btn-danger btn-form" type="input"><a style="color: aliceblue;" href={% url "cambio_password" %}>Cambiar Contraseña</a></button>
-            <div class="d-flex justify-content-center p-5">
+            <div class="d-f justify-content-center p-5" style="margin-left: 35%;">
+                <button class="btn btn-danger btn-form" type="input"><a style="color: aliceblue;" href={% url "cambio_password" %}>Cambiar Contraseña</a></button>
                 <button class="btn btn-primary btn-form" type="submit">Confirmar cambios</button>
             </div>
         </form>

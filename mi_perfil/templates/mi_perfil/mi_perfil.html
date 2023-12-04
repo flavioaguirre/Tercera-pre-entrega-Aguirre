@@ -6,23 +6,26 @@
 
 {% block main %}
     <main style="margin-top: 12%">
-        <div style="margin: 12% 0 0 5rem">
-            <h1 class='text-center'>Mi Perfil</h1>
-            <form method="POST" style="max-height:100vh; padding: 3rem;">
-                <h3 class="p-3">{{ request.user.username }}</h3>
-                {% csrf_token %}
-                <ul>
-                    <li>Alias : {{ request.user.username }}</li>
-                    <li>Email : {{ request.user.email }}</li>
-                    <li>Nombre : {{ request.user.first_name }}</li>
-                    <li>Apellido : {{ request.user.last_name }}</li>
-                    <li>Mi Biografía : {{ biografia_usuario }}</li>
-                </ul>
-                <div class="d-flex justify-content-center p-5">
-                    <a href={% url "editar_perfil" %}><button class="btn btn-primary btn-form" type="button">Editar Perfil</button>
-                </div>
-            </form>
-        </div>
+        <h1 class='text-center'>Mi Perfil</h1>
+        <form method="POST" class='section__form' enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="d-f justify-content-center">
+                {% if avatar %}
+                    <img  src="{{ avatar.url }}" alt="Mi avatar" class="p-2" style="width: 60%;border-radius: 200%;margin-left: 18%;">
+                {% endif %}
+                <h3 class="p-3 text-center">{{ request.user.username }}</h3>
+            </div>
+            <ul class="p-4">
+                <li>Alias : {{ request.user.username }}</li>
+                <li>Email : {{ request.user.email }}</li>
+                <li>Nombre : {{ request.user.first_name }}</li>
+                <li>Apellido : {{ request.user.last_name }}</li>
+                <li>Mi Biografía : {{ biografia_usuario }}</li>
+            </ul>
+            <div class="d-flex justify-content-center p-5">
+                <a href={% url "editar_perfil" %}><button class="btn btn-primary btn-form" type="button">Editar Perfil</button>
+            </div>
+        </form>
     </main>
 
 {% endblock main %}

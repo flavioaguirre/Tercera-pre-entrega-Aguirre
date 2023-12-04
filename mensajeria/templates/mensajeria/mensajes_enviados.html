@@ -18,10 +18,10 @@
                                 <div class="card-body">
                                     <figure class="figure_container mt-4">
                                         <blockquote class="blockquote">
-                                            <p>{{ mensaje.contenido | safe }}</p>
+                                            <p>{{ mensaje.mensaje | safe }}</p>
                                         </blockquote>
                                         <figcaption class="blockquote-footer mt-5">
-                                            <cite title="Source Title">Enviado a: {{ mensaje.receptor.username }}, {{ mensaje.fecha_envio }}</cite>
+                                            <cite title="Source Title">Enviado a: {{ mensaje.destinatario.username }}, {{ mensaje.fecha_envio }}</cite>
                                         </figcaption>
                                     </figure>
                                 </div>

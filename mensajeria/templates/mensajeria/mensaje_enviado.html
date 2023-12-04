@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+  <title>Mensaje enviado | TechBlog</title>
+{% endblock title %}
+
+
+{% block main %}
+    <main class="contenedor-main" style="display: block;">
+        <h1 class="text-center">Tú mensaje se ha enviado con éxito!</h1>
+        <a class="d-f justify-content-center" href={% url "menu_mensajes" %}><button class="btn btn-primary btn-form" type="button">Volver al menú Mensajería</button></a>
+        <a class="d-f justify-content-center" href={% url "enviar_mensaje" %}><button class="btn btn-primary btn-form" type="button">Enviar otro mensaje</button></a>
+    </main>
+{% endblock main %}

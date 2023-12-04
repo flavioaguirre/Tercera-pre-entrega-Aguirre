@@ -31,11 +31,15 @@ class EnviarMensaje(CreateView):
     model = Mensajeria
     template_name = 'mensajeria/mensaje_form.html'
     fields = ['destinatario', 'mensaje']
-    success_url = reverse_lazy('bandeja_entrada')
-
+    success_url = reverse_lazy('mensaje_enviado')
+    
     def form_valid(self, form):
         form.instance.emisor = self.request.user
         return super().form_valid(form)
+
+
+class MensajeEnviado(TemplateView):
+    template_name = "mensajeria/mensaje_enviado.html"
 
 
 class MensajesEnviados(ListView):
