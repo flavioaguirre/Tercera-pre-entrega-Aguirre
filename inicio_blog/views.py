@@ -81,7 +81,7 @@ def actualizar_post(request, id):
 
 @login_required
 def mejor_posteo_1(request):
-    posteo_elegido = get_object_or_404(Posteos, pk=2)
+    posteo_elegido = get_object_or_404(Posteos, pk=1)
     return render(request, 'inicio_blog/mejor_posteo.html', {'posteo_elegido': posteo_elegido})
 
 @login_required
@@ -91,5 +91,5 @@ def mejor_posteo_2(request):
 
 @login_required
 def mejor_posteo_3(request):
-    posteo_elegido = get_object_or_404(Posteos, pk=6)
+    posteo_elegido = get_object_or_404(Posteos, pk=3)
     return render(request, 'inicio_blog/mejor_posteo.html', {'posteo_elegido': posteo_elegido})
