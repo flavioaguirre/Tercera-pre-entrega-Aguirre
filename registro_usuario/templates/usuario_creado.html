@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}
+  <title>Usuario creado</title>
+{% endblock title %}
+
+
+{% block main %}
+    <main class="contenedor-main" style="display: block;">
+        <h1 class="text-center">Tú usuario se ha registrado con éxito!</h1>
+        <a class="" href={% url "login" %}><button class="btn btn-primary btn-form" type="button">Iniciar Sesión</button></a>
+    </main>
+{% endblock main %}

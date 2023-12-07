@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.views.generic.base import TemplateView
 from django.contrib.auth.models import User
 from django.contrib.auth import login
 from .forms import FormUsuarioNuevo
@@ -14,7 +15,7 @@ def creacion_usuario(request):
                 user = User.objects.create_user(username=request.POST['username'],
                                                 password=request.POST['password1'])
                 user.save()
-                return redirect('login')
+                return redirect('usuario_creado')
             except:
                 return render(request, 'registro.html', {
                     'mi_formulario': FormUsuarioNuevo,
@@ -25,3 +26,7 @@ def creacion_usuario(request):
                 'mi_formulario': FormUsuarioNuevo,
                 "alerta": 'Las contraseñas no coinciden'
             })
+
+
+class UsuarioCreado(TemplateView):
+    template_name = "usuario_creado.html"
