@@ -70,6 +70,11 @@ def actualizar_post(request, id):
             
             posteo_a_actualizar.save()
             return redirect('mis_posteos')
+        else:
+            return render(request, 'inicio_blog/actualizar_post.html', {
+            'posteo_form': posteo_form,
+            'alerta': f'Por favor completa el campo de imagen',
+            })
     return render(request, 'inicio_blog/actualizar_post.html', {
         'posteo_form': ActualizarPosteoForm(initial={
             'titulo_posteo':posteo_a_actualizar.titulo_posteo,
